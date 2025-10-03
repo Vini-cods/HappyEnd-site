@@ -599,7 +599,7 @@ body {
     transform: none;
   }
 }
-.carousel-section {
+ .carousel-section {
         background: rgba(0, 0, 0, 0.7);
         padding: 60px 20px;
         position: relative;
@@ -627,18 +627,66 @@ body {
         border-radius: 12px;
         overflow: hidden;
         height: 400px;
-        transition: transform 0.3s ease, box-shadow 0.3s ease;
-      }
-
-      .splide__slide:hover {
-        transform: scale(1.05);
-        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+        position: relative;
+        cursor: pointer;
       }
 
       .splide__slide img {
         width: 100%;
         height: 100%;
         object-fit: cover;
+        transition: all 0.5s ease;
+      }
+
+      /* Container para o overlay/texto */
+      .slide-overlay {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: rgba(0, 0, 0, 0.7);
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        opacity: 0;
+        transition: all 0.5s ease;
+        padding: 20px;
+        text-align: center;
+        color: white;
+      }
+
+      /* Efeito hover - aplica blur na imagem e mostra o texto */
+      .splide__slide:hover img {
+        filter: blur(5px) brightness(1);
+        transform: scale(1.1);
+      }
+
+      .splide__slide:hover .slide-overlay {
+        opacity: 1;
+      }
+
+      /* Estilos para o texto no overlay */
+      .person-name {
+        font-size: 1.8rem;
+        font-weight: bold;
+        margin-bottom: 10px;
+        color: #ffd700;
+        text-transform: uppercase;
+        letter-spacing: 2px;
+      }
+
+      .person-role {
+        font-size: 1.2rem;
+        margin-bottom: 15px;
+        color: #fff;
+      }
+
+      .person-description {
+        font-size: 1rem;
+        line-height: 1.5;
+        max-width: 80%;
       }
 
       .splide__arrow {
@@ -665,4 +713,28 @@ body {
         background: #ffd700;
         opacity: 1;
         transform: scale(1.3);
+      }
+
+      /* Responsividade */
+      @media (max-width: 768px) {
+        .splide__slide {
+          height: 250px;
+        }
+        
+        .carousel-title {
+          font-size: 1.8rem;
+        }
+        
+        .person-name {
+          font-size: 1.4rem;
+        }
+        
+        .person-role {
+          font-size: 1rem;
+        }
+        
+        .person-description {
+          font-size: 0.9rem;
+          max-width: 95%;
+        }
       }
