@@ -1,48 +1,135 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>HappyEnd</title>
-    <link rel="stylesheet" href="style.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>HappyEnd</title>
+  <link rel="stylesheet" href="style.css" />
+  <link
+    rel="stylesheet"
+    href="https://cdn.jsdelivr.net/npm/@splidejs/splide@4.1.4/dist/css/splide.min.css"
+  />
 </head>
 <body>
-    <!-- Navegação -->
-    <nav class="navbar">
-        <div class="nav-container">
-            <a href="#" class="nav-item">Início</a>
-            <a href="#" class="nav-item">Fotos</a>
-            <a href="#" class="nav-item">Projetos</a>
-            <a href="#" class="nav-item">Agradecimentos</a>
-        </div>
-    </nav>
+  <!-- Partículas de fundo -->
+  <div class="particles" id="particles"></div>
 
-    <!-- Conteúdo Principal -->
-    <main class="main-content">
-        <div class="intro-text">E com vocês nosso projeto...</div>
-        
-        <div class="logo">HappyEnd</div>
-        
-    </main>
+  <!-- Menu de Navegação -->
+  <nav class="navbar" id="navbar">
+    <ul class="nav-menu" id="navMenu">
+      <li class="nav-item">
+        <a href="#inicio" class="nav-link active" data-section="inicio">Início</a>
+      </li>
+      <li class="nav-item">
+        <a href="#fotos" class="nav-link" data-section="fotos">Fotos</a>
+      </li>
+      <li class="nav-item">
+        <a href="#projetos" class="nav-link" data-section="projetos">Projetos</a>
+      </li>
+      <li class="nav-item">
+        <a href="#agradecimentos" class="nav-link" data-section="agradecimentos">Agradecimentos</a>
+      </li>
+    </ul>
+    <button class="mobile-menu-btn" id="mobileMenuBtn">☰</button>
+  </nav>
 
-    <!-- Cortina Teatral -->
-    <div class="curtain-container" id="curtainContainer">
-        <div class="curtain-top" id="curtainTop"></div>
-        <div class="curtain curtain-left" id="curtainLeft"></div>
-        <div class="curtain curtain-right" id="curtainRight"></div>
-        <div class="curtain-text" id="curtainText">
-            Prepare-se para conhecer<br>
-            <strong>HappyEnd</strong>
-        </div>
+  <!-- Conteúdo Principal -->
+  <main class="main-content" id="inicio">
+    <div class="intro-text" id="introText">E com vocês nosso projeto...</div>
+    <div class="logo">HappyEnd</div>
+  </main>
+
+  <!-- Cortina Teatral -->
+  <div class="curtain-container" id="curtainContainer">
+    <div class="curtain-top" id="curtainTop"></div>
+    <div class="curtain curtain-left" id="curtainLeft"></div>
+    <div class="curtain curtain-right" id="curtainRight"></div>
+    <div class="curtain-text" id="curtainText">
+      Prepare-se para conhecer<br />
+      <strong>HappyEnd</strong>
     </div>
+  </div>
 
-    <!-- Indicador de scroll -->
-    <div class="scroll-indicator" id="scrollIndicator">
-        <div>Role para baixo</div>
-        <div class="arrow">↓</div>
+  <!-- Indicador de scroll -->
+  <div class="scroll-indicator" id="scrollIndicator">
+    <div>Role para baixo</div>
+    <div class="arrow">↓</div>
+  </div>
+
+  <!-- Holofotes -->
+  <div class="spotlight spotlight-1"></div>
+  <div class="spotlight spotlight-2"></div>
+
+  <!-- Seção 3: Descrição do projeto -->
+  <section class="section" id="projetos">
+    <div class="description-box" id="descriptionBox">
+      <p>
+        O projeto HappyEnd tem como proposta exaltar os trabalhos de conclusão
+        de curso (TCC) desenvolvidos pelos estudantes do 3º ano A e B, em
+        parceria com a equipe do SESI SENAI de Ferraz de Vasconcelos. Esses
+        projetos foram criados com o intuito de oferecer soluções práticas para
+        desafios enfrentados no dia a dia e também para problemas mais amplos da
+        sociedade.
+      </p>
+
+      <p>
+        Mais do que apresentar ideias inovadoras, o HappyEnd busca dar
+        visibilidade aos talentos dos alunos e agradecer a todos os
+        profissionais que contribuíram ao longo dessa jornada. O nome do projeto
+        não foi escolhido por acaso — HappyEnd, que significa "final feliz",
+        traduz exatamente o sentimento de dever cumprido e celebração por um
+        ciclo que se encerra com sucesso para todas as equipes envolvidas.
+      </p>
     </div>
+  </section>
 
+  <!-- Carrossel de homenagens -->
+  <section class="carousel-section" id="agradecimentos">
+    <h2 class="carousel-title">Homenagem aos envolvidos</h2>
+    <div class="splide" id="imageCarousel">
+      <div class="splide__track">
+        <ul class="splide__list">
+          <li class="splide__slide">
+            <img src="src/img/susiPic.jpeg" alt="Prof Susi" />
+            <div class="slide-overlay">
+              <div class="person-name">Profª Susi</div>
+              <div class="person-role">Professora de língua portuguesa</div>
+              <div class="person-description">
+                Obrigado por toda dedicação e paciência em nos ensinar a arte da escrita e comunicação. 
+                Sua paixão pela língua portuguesa nos inspirou a ir além.
+              </div>
+            </div>
+          </li>
+          <li class="splide__slide">
+            <img src="src/img/willianPic.jpeg" alt="Prof William" />
+            <div class="slide-overlay">
+              <div class="person-name">Profº William</div>
+              <div class="person-role">Professor de matemática</div>
+              <div class="person-description">
+                Gratidão por descomplicar os números e mostrar que a matemática está em tudo. 
+                Seus ensinamentos foram fundamentais para nossos projetos.
+              </div>
+            </div>
+          </li>
+          <!-- Adicione mais slides conforme necessário -->
+          <li class="splide__slide">
+            <img src="src/img/placeholder.jpeg" alt="Coordenação" />
+            <div class="slide-overlay">
+              <div class="person-name">Equipe SESI SENAI</div>
+              <div class="person-role">Coordenação e Apoio</div>
+              <div class="person-description">
+                A toda equipe que nos apoiou nessa jornada, fornecendo estrutura, 
+                conhecimento e motivação para alcançarmos nossos objetivos.
+              </div>
+            </div>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </section>
 
-    <script src="script.js"></script>
+  <!-- Scripts -->
+  <script src="https://cdn.jsdelivr.net/npm/@splidejs/splide@4.1.4/dist/js/splide.min.js"></script>
+  <script src="script.js"></script>
 </body>
 </html>
