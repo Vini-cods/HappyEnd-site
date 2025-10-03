@@ -1,0 +1,470 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>HappyEnd - Em Breve</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@splidejs/splide@4.1.4/dist/css/splide.min.css">
+    <style>
+      /* Estilos existentes do site (mantidos do código original) */
+      body {
+        margin: 0;
+        padding: 0;
+        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        background-color: #0a0a0a;
+        color: #fff;
+        overflow-x: hidden;
+        position: relative;
+      }
+
+      .navbar {
+        position: fixed;
+        top: 0;
+        width: 100%;
+        background-color: rgba(10, 10, 10, 0.8);
+        padding: 15px 0;
+        z-index: 1000;
+        display: flex;
+        justify-content: center;
+        backdrop-filter: blur(10px);
+      }
+
+      .nav-menu {
+        display: flex;
+        list-style: none;
+        margin: 0;
+        padding: 0;
+      }
+
+      .nav-item {
+        margin: 0 20px;
+      }
+
+      .nav-link {
+        color: #fff;
+        text-decoration: none;
+        font-weight: 500;
+        transition: color 0.3s;
+        position: relative;
+      }
+
+      .nav-link:hover, .nav-link.active {
+        color: #ffd700;
+      }
+
+      .mobile-menu-btn {
+        display: none;
+        background: none;
+        border: none;
+        color: white;
+        font-size: 24px;
+        cursor: pointer;
+        position: absolute;
+        right: 20px;
+        top: 10px;
+      }
+
+      .particles {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        z-index: -1;
+      }
+
+      .curtain-left, .curtain-right {
+        position: fixed;
+        top: 0;
+        width: 20%;
+        height: 100%;
+        background-color: #111;
+        z-index: 1;
+      }
+
+      .curtain-left {
+        left: 0;
+      }
+
+      .curtain-right {
+        right: 0;
+      }
+
+      .curtain-top {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 80px;
+        background-color: #111;
+        z-index: 1;
+      }
+
+      .spotlight {
+        position: fixed;
+        width: 200px;
+        height: 200px;
+        border-radius: 50%;
+        background: radial-gradient(circle, rgba(255,255,255,0.3) 0%, rgba(255,255,255,0) 70%);
+        z-index: -1;
+      }
+
+      .spotlight-1 {
+        top: 20%;
+        left: 10%;
+      }
+
+      .spotlight-2 {
+        bottom: 20%;
+        right: 10%;
+      }
+
+      .section {
+        min-height: 100vh;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        padding: 80px 20px;
+        text-align: center;
+        position: relative;
+        z-index: 2;
+      }
+
+      .intro-text {
+        font-size: 2.5rem;
+        margin-bottom: 30px;
+        text-transform: uppercase;
+        letter-spacing: 3px;
+        animation: fadeIn 2s ease-in-out;
+      }
+
+      .logo {
+        font-size: 6rem;
+        font-weight: bold;
+        text-transform: uppercase;
+        letter-spacing: 8px;
+        margin: 30px 0;
+        color: #ffd700;
+        text-shadow: 0 0 10px rgba(255, 215, 0, 0.5);
+        animation: glow 2s infinite alternate;
+      }
+
+      @keyframes glow {
+        from {
+          text-shadow: 0 0 10px rgba(255, 215, 0, 0.5);
+        }
+        to {
+          text-shadow: 0 0 20px rgba(255, 215, 0, 0.8), 0 0 30px rgba(255, 215, 0, 0.6);
+        }
+      }
+
+      .description-box {
+        max-width: 800px;
+        background-color: rgba(255, 255, 255, 0.1);
+        padding: 40px;
+        border-radius: 10px;
+        backdrop-filter: blur(10px);
+        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+      }
+
+      .description-box p {
+        font-size: 1.1rem;
+        line-height: 1.6;
+        margin-bottom: 20px;
+      }
+
+      /* Estilos para o novo carrossel */
+      .carousel-section {
+        background: rgba(0, 0, 0, 0.7);
+        padding: 60px 20px;
+        position: relative;
+        z-index: 2;
+      }
+
+      .carousel-title {
+        text-align: center;
+        font-size: 2.5rem;
+        margin-bottom: 40px;
+        color: #ffd700;
+        text-transform: uppercase;
+        letter-spacing: 3px;
+      }
+
+      .splide {
+        max-width: 1200px;
+        margin: 0 auto;
+      }
+
+      .splide__slide {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        border-radius: 12px;
+        overflow: hidden;
+        height: 400px;
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+      }
+
+      .splide__slide:hover {
+        transform: scale(1.05);
+        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+      }
+
+      .splide__slide img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+      }
+
+      .splide__arrow {
+        background: rgba(255, 255, 255, 0.2);
+        width: 3rem;
+        height: 3rem;
+        backdrop-filter: blur(10px);
+      }
+
+      .splide__arrow:hover {
+        background: rgba(255, 255, 255, 0.3);
+      }
+
+      .splide__arrow svg {
+        fill: #ffd700;
+      }
+
+      .splide__pagination__page {
+        background: rgba(255, 255, 255, 0.3);
+        opacity: 0.7;
+      }
+
+      .splide__pagination__page.is-active {
+        background: #ffd700;
+        opacity: 1;
+        transform: scale(1.3);
+      }
+
+      /* Responsividade */
+      @media (max-width: 768px) {
+        .mobile-menu-btn {
+          display: block;
+        }
+        
+        .nav-menu {
+          display: none;
+          flex-direction: column;
+          position: absolute;
+          top: 60px;
+          left: 0;
+          width: 100%;
+          background-color: rgba(10, 10, 10, 0.95);
+          padding: 20px 0;
+        }
+        
+        .nav-menu.active {
+          display: flex;
+        }
+        
+        .nav-item {
+          margin: 10px 0;
+          text-align: center;
+        }
+        
+        .logo {
+          font-size: 3rem;
+        }
+        
+        .intro-text {
+          font-size: 1.5rem;
+        }
+        
+        .description-box {
+          padding: 20px;
+        }
+        
+        .splide__slide {
+          height: 250px;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <!-- Menu de Navegação -->
+    <nav class="navbar" id="navbar">
+      <ul class="nav-menu" id="navMenu">
+        <li class="nav-item">
+          <a href="#inicio" class="nav-link active" data-section="inicio">Início</a>
+        </li>
+        <li class="nav-item">
+          <a href="#fotos" class="nav-link" data-section="fotos">Fotos</a>
+        </li>
+        <li class="nav-item">
+          <a href="#projetos" class="nav-link" data-section="projetos">Projetos</a>
+        </li>
+        <li class="nav-item">
+          <a href="#agradecimentos" class="nav-link" data-section="agradecimentos">Agradecimentos</a>
+        </li>
+      </ul>
+      <button class="mobile-menu-btn" id="mobileMenuBtn">☰</button>
+    </nav>
+    <!-- Partículas -->
+    <div class="particles" id="particles"></div>
+
+    <!-- Cortinas -->
+    <div class="curtain-left"></div>
+    <div class="curtain-right"></div>
+    <div class="curtain-top"></div>
+
+    <!-- Holofotes -->
+    <div class="spotlight spotlight-1"></div>
+    <div class="spotlight spotlight-2"></div>
+
+    <!-- Seção 1: Frase introdutória -->
+    <section class="section">
+      <div class="intro-text" id="introText">E com vocês nosso projeto...</div>
+    </section>
+
+    <!-- Seção 2: Logo HappyEnd -->
+    <section class="section">
+      <h1 class="logo" id="logoTitle">HappyEnd</h1>
+    </section>
+
+    <!-- Seção 3: Descrição do projeto -->
+    <section class="section">
+      <div class="description-box" id="descriptionBox">
+        <p>
+          O projeto HappyEnd tem como proposta exaltar os trabalhos de conclusão
+          de curso (TCC) desenvolvidos pelos estudantes do 3º ano A e B, em
+          parceria com a equipe do SESI SENAI de Ferraz de Vasconcelos. Esses
+          projetos foram criados com o intuito de oferecer soluções práticas
+          para desafios enfrentados no dia a dia e também para problemas mais
+          amplos da sociedade.
+        </p>
+
+        <p>
+          Mais do que apresentar ideias inovadoras, o HappyEnd busca dar
+          visibilidade aos talentos dos alunos e agradecer a todos os
+          profissionais que contribuíram ao longo dessa jornada. O nome do
+          projeto não foi escolhido por acaso — HappyEnd, que significa "final
+          feliz", traduz exatamente o sentimento de dever cumprido e celebração
+          por um ciclo que se encerra com sucesso para todas as equipes
+          envolvidas.
+        </p>
+      </div>
+    </section>
+
+    <!-- NOVA SEÇÃO: Carrossel de Imagens -->
+    <section class="carousel-section" id="galeria">
+      <h2 class="carousel-title">Galeria de Projetos</h2>
+      <div class="splide" id="imageCarousel">
+        <div class="splide__track">
+          <ul class="splide__list">
+            <li class="splide__slide">
+              <img src="src/img/susiPic.jpeg" alt="Projeto 1">
+            </li>
+            <li class="splide__slide">
+              <img src="src/img/willianPic.jpeg" alt="Projeto 2">
+            </li>
+            <li class="splide__slide">
+              <img src="src/img/kelliPic.jpeg" alt="Projeto 3">
+            </li>
+            <li class="splide__slide">
+              <img src="src/img/geoPic.jpeg" alt="Projeto 4">
+            </li>
+            <li class="splide__slide">
+              <img src="src/img/pabloPic.jpeg" alt="Projeto 12">
+            </li>
+            <li class="splide__slide">
+              <img src="src/img/alePic.jpeg" alt="Projeto 5">
+            </li>
+            <li class="splide__slide">
+              <img src="src/img/lauraPic.jpeg" alt="Projeto 6">
+            </li>
+            <li class="splide__slide">
+              <img src="src/img/icaroPic.jpeg" alt="Projeto 7">
+            </li>
+            <li class="splide__slide">
+              <img src="src/img/marcosPic.jpeg" alt="Projeto 8">
+            </li>
+            <li class="splide__slide">
+              <img src="src/img/marceloPic.jpeg" alt="Projeto 9">
+            </li>
+            <li class="splide__slide">
+              <img src="src/img/matheusPic.jpeg" alt="Projeto 10">
+            </li>
+            <li class="splide__slide">
+              <img src="src/img/mariPic.jpeg" alt="Projeto 11">
+            </li>
+            <li class="splide__slide">
+              <img src="src/img/nutriPic.jpeg" alt="Projeto 13">
+            </li>
+            <li class="splide__slide">
+              <img src="src/img/tamyPic.jpeg" alt="Projeto 14">
+            </li>
+            <li class="splide__slide">
+              <img src="src/img/natPic.jpeg" alt="Projeto 15">
+            </li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <script src="https://cdn.jsdelivr.net/npm/@splidejs/splide@4.1.4/dist/js/splide.min.js"></script>
+    <script>
+      // Script para o carrossel
+      document.addEventListener('DOMContentLoaded', function() {
+        // Inicializar o carrossel
+        new Splide('#imageCarousel', {
+          type: 'loop',
+          perPage: 3,
+          focus: 'center',
+          gap: '1rem',
+          pagination: true,
+          arrows: true,
+          breakpoints: {
+            1024: {
+              perPage: 2,
+            },
+            768: {
+              perPage: 1,
+            }
+          }
+        }).mount();
+
+        // Script para o menu mobile
+        const mobileMenuBtn = document.getElementById('mobileMenuBtn');
+        const navMenu = document.getElementById('navMenu');
+        
+        mobileMenuBtn.addEventListener('click', function() {
+          navMenu.classList.toggle('active');
+        });
+
+        // Script para as partículas (simulação simples)
+        const particlesContainer = document.getElementById('particles');
+        for (let i = 0; i < 50; i++) {
+          const particle = document.createElement('div');
+          particle.style.position = 'absolute';
+          particle.style.width = Math.random() * 5 + 'px';
+          particle.style.height = particle.style.width;
+          particle.style.backgroundColor = 'rgba(255, 255, 255, 0.5)';
+          particle.style.borderRadius = '50%';
+          particle.style.left = Math.random() * 100 + 'vw';
+          particle.style.top = Math.random() * 100 + 'vh';
+          particle.style.animation = `float ${Math.random() * 10 + 5}s infinite ease-in-out`;
+          particlesContainer.appendChild(particle);
+        }
+
+        // Adicionar animação de flutuação
+        const style = document.createElement('style');
+        style.textContent = `
+          @keyframes float {
+            0%, 100% { transform: translateY(0) translateX(0); }
+            25% { transform: translateY(-20px) translateX(10px); }
+            50% { transform: translateY(0) translateX(20px); }
+            75% { transform: translateY(20px) translateX(10px); }
+          }
+        `;
+        document.head.appendChild(style);
+      });
+    </script>
+  </body>
+</html>

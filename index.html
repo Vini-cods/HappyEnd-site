@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>HappyEnd - Em Breve</title>
     <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@splidejs/splide@4.1.4/dist/css/splide.min.css">
   </head>
   <body>
     <!-- Menu de Navegação -->
@@ -70,7 +71,83 @@
         </p>
       </div>
     </section>
+    <section class="carousel-section" id="galeria">
+      <h2 class="carousel-title">Homenagem aos envolvidos</h2>
+      <div class="splide" id="imageCarousel">
+        <div class="splide__track">
+          <ul class="splide__list">
+            <li class="splide__slide">
+              <img src="src/img/susiPic.jpeg" alt="Projeto 1">
+            </li>
+            <li class="splide__slide">
+              <img src="src/img/willianPic.jpeg" alt="Projeto 2">
+            </li>
+            <li class="splide__slide">
+              <img src="src/img/kelliPic.jpeg" alt="Projeto 3">
+            </li>
+            <li class="splide__slide">
+              <img src="src/img/geoPic.jpeg" alt="Projeto 4">
+            </li>
+            <li class="splide__slide">
+              <img src="src/img/pabloPic.jpeg" alt="Projeto 12">
+            </li>
+            <li class="splide__slide">
+              <img src="src/img/alePic.jpeg" alt="Projeto 5">
+            </li>
+            <li class="splide__slide">
+              <img src="src/img/lauraPic.jpeg" alt="Projeto 6">
+            </li>
+            <li class="splide__slide">
+              <img src="src/img/icaroPic.jpeg" alt="Projeto 7">
+            </li>
+            <li class="splide__slide">
+              <img src="src/img/marcosPic.jpeg" alt="Projeto 8">
+            </li>
+            <li class="splide__slide">
+              <img src="src/img/marceloPic.jpeg" alt="Projeto 9">
+            </li>
+            <li class="splide__slide">
+              <img src="src/img/matheusPic.jpeg" alt="Projeto 10">
+            </li>
+            <li class="splide__slide">
+              <img src="src/img/mariPic.jpeg" alt="Projeto 11">
+            </li>
+            <li class="splide__slide">
+              <img src="src/img/nutriPic.jpeg" alt="Projeto 13">
+            </li>
+            <li class="splide__slide">
+              <img src="src/img/tamyPic.jpeg" alt="Projeto 14">
+            </li>
+            <li class="splide__slide">
+              <img src="src/img/natPic.jpeg" alt="Projeto 15">
+            </li>
+          </ul>
+        </div>
+      </div>
+    </section>
+    <script> 
+    document.addEventListener('DOMContentLoaded', function() {
+        // Inicializar o carrossel
+        new Splide('#imageCarousel', {
+          type: 'loop',
+          perPage: 3,
+          focus: 'center',
+          gap: '1rem',
+          pagination: true,
+          arrows: true,
+          breakpoints: {
+            1024: {
+              perPage: 2,
+            },
+            768: {
+              perPage: 1,
+            }
+          }
+        }).mount();
+      });
 
+</script>
     <script src="script.js"></script>
+     <script src="https://cdn.jsdelivr.net/npm/@splidejs/splide@4.1.4/dist/js/splide.min.js"></script>
   </body>
 </html>
