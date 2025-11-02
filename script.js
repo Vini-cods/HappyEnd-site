@@ -1,187 +1,96 @@
 // Estado da cortina
 let curtainOpened = false;
 
-// Dados dos projetos TCC
+// Dados dos projetos TCC ATUALIZADOS
 const projectsData = [
   {
     id: 1,
-    title: "EcoSoluções",
-    subtitle: "Sustentabilidade na Prática",
-    members: "Ana, Bruno, Carlos, Daniela",
-    image: "src/img/projeto1.jpg",
+    title: "Librali",
+    subtitle: "A vida além dos sons",
+    members:
+      "Guilherme Bastos, Jefferson Silva, Nicole Kiyan, Karina Pagnani, Rafaela Matzak, Sarah Pontes",
+    image: "src/img/librali.jpeg",
     description:
-      "Projeto focado em desenvolver soluções sustentáveis para problemas ambientais locais, com foco na reciclagem e reutilização de materiais.",
+      "Uma plataforma educacional dedicada a democratizar o ensino de LIBRAS, tornando o aprendizado acessível e completamente gratuito para todos. Oferecemos uma experiência completa tanto em versão web quanto mobile, projetada para atender diferentes perfis de aprendizes.",
     problem:
-      "A crescente geração de resíduos sólidos e a falta de conscientização sobre práticas sustentáveis na comunidade escolar e local.",
+      "Falta de acesso a cursos de LIBRAS gratuitos e de qualidade, dificultando a inclusão social de pessoas surdas e a capacitação de ouvintes para comunicação inclusiva.",
     solution:
-      "Desenvolvimento de um sistema de compostagem e horta vertical utilizando materiais reciclados, além de campanhas educativas sobre sustentabilidade.",
+      "Desenvolvimento de uma plataforma completa com cursos para adultos e área kids gamificada, oferecendo ensino de LIBRAS de forma acessível, interativa e gratuita.",
     results:
-      "Redução de 40% no lixo orgânico da escola, criação de 3 hortas verticais e aumento de 60% na conscientização ambiental dos alunos.",
-    tags: ["Sustentabilidade", "Reciclagem", "Educação Ambiental"],
+      "Plataforma com metodologia prática e interativa para adultos e interface lúdica para crianças, promovendo o primeiro contato com LIBRAS de forma natural e divertida.",
+    tags: ["LIBRAS", "Inclusão", "Educação", "Acessibilidade"],
   },
   {
     id: 2,
-    title: "TechInclusão",
-    subtitle: "Tecnologia para Todos",
-    members: "Eduardo, Fernanda, Gabriel, Helena",
-    image: "src/img/projeto2.jpg",
+    title: "VisionCash",
+    subtitle: "Autonomia financeira para deficientes visuais",
+    members:
+      "Cauã Ross, Yago Dias, Leonardo Freitas, Mateus Silva, Marcelo Oliveira, Vitor Vasconcelos",
+    image: "src/img/banner Happ.png",
     description:
-      "Desenvolvimento de aplicativo para facilitar o acesso de pessoas com deficiência visual a conteúdos digitais.",
+      "Tecnologia assistiva que reconhece e conta cédulas de forma inteligente, promovendo autonomia e inclusão para pessoas com deficiência visual.",
     problem:
-      "Dificuldade de acesso a conteúdos digitais por pessoas com deficiência visual devido à falta de ferramentas adequadas.",
+      "Dificuldade de pessoas com deficiência visual em identificar e contar cédulas de dinheiro, limitando sua independência em transações financeiras.",
     solution:
-      "Criação de um aplicativo com interface adaptada e recursos de áudio descrição para tornar conteúdos digitais mais acessíveis.",
+      "Sistema que utiliza IoT e inteligência artificial para identificar valores de cédulas e registrar transações em um aplicativo acessível.",
     results:
-      "Protótipo funcional testado com usuários reais, feedback positivo sobre usabilidade e planos para expansão das funcionalidades.",
-    tags: ["Acessibilidade", "Tecnologia", "Inclusão Digital"],
+      "Dispositivo funcional que garante segurança, praticidade e independência no manuseio do dinheiro para pessoas com deficiência visual.",
+    tags: ["Acessibilidade", "Tecnologia Assistiva", "IoT", "Inclusão"],
   },
   {
     id: 3,
-    title: "Alimentação Saudável",
-    subtitle: "Da Horta à Mesa",
-    members: "Isabela, João, Karina, Lucas",
-    image: "src/img/projeto3.jpg",
+    title: "AURA",
+    subtitle: "Aprendizagem com Uso de Realidade Aumentada",
+    members:
+      "Gabriel Espindola, Cristian Mariano, Josué Bademian, Lucas Zamboti, Vinicius Pinhas",
+    image: "src/img/AURA.png",
     description:
-      "Projeto de horta comunitária e educação nutricional para promover alimentação saudável na escola.",
+      "Sistema híbrido de educação inclusiva que integra aplicativo móvel e dispositivo IoT. Personagens que ensinam, cartas que falam, tecnologia que inclui.",
     problem:
-      "Baixo consumo de alimentos saudáveis entre os estudantes e desperdício de alimentos na merenda escolar.",
+      "Falta de recursos educacionais inclusivos e interativos que atendam às necessidades de crianças com diferentes estilos de aprendizagem.",
     solution:
-      "Implementação de horta comunitária na escola e desenvolvimento de oficinas de educação nutricional e culinária saudável.",
+      "Integração de app com dispositivo IoT onde crianças escaneiam cartas físicas com personagens inclusivos para acessar minigames educativos.",
     results:
-      "Aumento de 35% no consumo de verduras e legumes, redução de 25% no desperdício de alimentos e criação de grupo de culinária saudável.",
-    tags: ["Alimentação", "Saúde", "Educação Nutricional"],
+      "Sistema com 3 personagens inclusivos e 15 minigames educativos, proporcionando experiência interativa, acessível e inclusiva.",
+    tags: ["Educação Inclusiva", "Realidade Aumentada", "IoT", "Gamificação"],
   },
   {
     id: 4,
-    title: "Energia Limpa",
-    subtitle: "Fontes Renováveis na Escola",
-    members: "Mariana, Nathan, Olivia, Pedro",
-    image: "src/img/projeto4.jpg",
+    title: "PositiveSense",
+    subtitle: "Tecnologia e inclusão para um ambiente escolar tranquilo",
+    members:
+      "Ana Luisa Alves, Heloisa Machado, Manuela Scarpari, Manuela Costa, Ryan Santos",
+    image: "src/img/positive.png",
     description:
-      "Implementação de sistema de energia solar para reduzir custos e promover consciência energética.",
+      "Sensor de ruído escolar com tecnologia IoT e site interativo sobre TEA com orientações, playlists e jogos calmantes.",
     problem:
-      "Alto consumo de energia elétrica na escola e falta de conscientização sobre fontes renováveis.",
+      "Altos níveis de ruído em sala de aula que prejudicam o aprendizado, especialmente de alunos com TEA, e falta de recursos educativos sobre autismo.",
     solution:
-      "Instalação de painéis solares e desenvolvimento de material educativo sobre energia renovável.",
+      "Sensor IoT que monitora ruído e envia histórico via app, combinado com site educativo sobre TEA com jogos interativos e conteúdos calmantes.",
     results:
-      "Redução de 30% na conta de energia e aumento de 70% no conhecimento sobre energias renováveis.",
-    tags: ["Energia Solar", "Sustentabilidade", "Educação"],
+      "Sistema de monitoramento de ruído funcional e site educativo que promove maior compreensão sobre TEA e oferece recursos para relaxamento.",
+    tags: ["TEA", "IoT", "Inclusão", "Educação"],
   },
   {
     id: 5,
-    title: "Biblioteca Digital",
-    subtitle: "Conhecimento ao Alcance de Todos",
-    members: "Quintino, Rafaela, Samuel, Tatiane",
-    image: "src/img/projeto5.jpg",
+    title: "English Adventure",
+    subtitle: "Desbloqueie um novo idioma, conecte o jogo à aprendizagem",
+    members:
+      "Julya Teixeira, Sofia Santos, Sofia Ornellas, Thaynara Silva, Victor Rocha",
+    image: "src/img/english.png",
     description:
-      "Plataforma digital para compartilhamento de livros e materiais didáticos entre alunos.",
+      "Sistema gamificado para ensino infantil de inglês com tabuleiro IoT integrado, site com desafios e aplicativo de acompanhamento.",
     problem:
-      "Dificuldade de acesso a livros e materiais didáticos atualizados.",
+      "Dificuldade no ensino de inglês para crianças através de métodos tradicionais pouco engajadores e interativos.",
     solution:
-      "Desenvolvimento de aplicativo para empréstimo digital de livros e compartilhamento de materiais.",
+      "Tabuleiro físico com IoT que propõe desafios, combinado com site e app que acompanham o progresso e auxiliam no aprendizado.",
     results:
-      "Mais de 200 livros disponíveis digitalmente e 85% de satisfação dos usuários.",
-    tags: ["Tecnologia", "Educação", "Biblioteca Digital"],
-  },
-  {
-    id: 6,
-    title: "Robótica Educacional",
-    subtitle: "Tecnologia e Criatividade",
-    members: "Ulisses, Vanessa, William, Xavier",
-    image: "src/img/projeto6.jpg",
-    description:
-      "Desenvolvimento de kits de robótica acessíveis para ensino de programação e eletrônica.",
-    problem:
-      "Falta de recursos para ensino de robótica e programação nas escolas públicas.",
-    solution:
-      "Criação de kits de robótica de baixo custo utilizando materiais reciclados e componentes acessíveis.",
-    results:
-      "10 kits produzidos, 8 oficinas realizadas e interesse de outras escolas no projeto.",
-    tags: ["Robótica", "Educação", "Tecnologia"],
-  },
-  {
-    id: 7,
-    title: "Saúde Mental",
-    subtitle: "Cuidando das Emoções",
-    members: "Yasmin, Zeca, Alice, Bernardo",
-    image: "src/img/projeto7.jpg",
-    description:
-      "Projeto de conscientização e apoio à saúde mental dos estudantes.",
-    problem:
-      "Falta de espaços para discussão sobre saúde mental e emocional na escola.",
-    solution:
-      "Criação de grupo de apoio e desenvolvimento de materiais informativos sobre saúde mental.",
-    results:
-      "60% dos alunos participaram das atividades e relataram melhora no bem-estar emocional.",
-    tags: ["Saúde Mental", "Bem-estar", "Educação"],
-  },
-  {
-    id: 8,
-    title: "Arte Urbana",
-    subtitle: "Expressão e Transformação",
-    members: "Carla, Diego, Elisa, Felipe",
-    image: "src/img/projeto8.jpg",
-    description:
-      "Intervenções artísticas para revitalização de espaços públicos da escola.",
-    problem:
-      "Espaços escolares despersonalizados e falta de identidade visual.",
-    solution:
-      "Desenvolvimento de projeto de arte urbana com participação dos alunos.",
-    results:
-      "3 murais criados, aumento de 80% na identificação dos alunos com o espaço escolar.",
-    tags: ["Arte", "Cultura", "Expressão"],
-  },
-  {
-    id: 9,
-    title: "Esporte Inclusivo",
-    subtitle: "Todos Jogam",
-    members: "Giovana, Henrique, Isabel, Julio",
-    image: "src/img/projeto9.jpg",
-    description:
-      "Adaptação de práticas esportivas para inclusão de alunos com diferentes habilidades.",
-    problem:
-      "Falta de atividades esportivas adaptadas para alunos com diferentes capacidades físicas.",
-    solution:
-      "Desenvolvimento de metodologias e equipamentos para esportes inclusivos.",
-    results:
-      "Participação de 95% dos alunos nas atividades e criação de torneios inclusivos.",
-    tags: ["Esporte", "Inclusão", "Saúde"],
-  },
-  {
-    id: 10,
-    title: "Jornal Estudantil",
-    subtitle: "Vozes da Escola",
-    members: "Larissa, Miguel, Nina, Otávio",
-    image: "src/img/projeto10.jpg",
-    description:
-      "Criação de veículo de comunicação para dar voz aos estudantes.",
-    problem:
-      "Falta de canal de comunicação oficial dos estudantes e pouca divulgação de eventos.",
-    solution:
-      "Desenvolvimento de jornal impresso e digital com conteúdo produzido pelos alunos.",
-    results:
-      "6 edições publicadas, alcance de 90% dos alunos e reconhecimento da direção.",
-    tags: ["Comunicação", "Jornalismo", "Educação"],
-  },
-  {
-    id: 11,
-    title: "Hidroponia Caseira",
-    subtitle: "Cultivo sem Terra",
-    members: "Patrícia, Ricardo, Sofia, Thiago",
-    image: "src/img/projeto11.jpg",
-    description:
-      "Sistema de cultivo hidropônico para produção de alimentos em pequenos espaços.",
-    problem:
-      "Falta de espaço para hortas tradicionais e interesse em técnicas modernas de cultivo.",
-    solution:
-      "Desenvolvimento de sistema hidropônico vertical utilizando materiais reciclados.",
-    results:
-      "Produção de 15kg de hortaliças por mês e redução de 50% no uso de água.",
-    tags: ["Hidroponia", "Agricultura", "Sustentabilidade"],
+      "Sistema completo que torna o aprendizado de inglês divertido e interativo para crianças através da gamificação e tecnologia.",
+    tags: ["Inglês", "Gamificação", "Educação Infantil", "IoT"],
   },
 ];
 
-// Scroll para controle da cortina - CORREÇÃO PARA POSICIONAMENTO INICIAL
+// Scroll para controle da cortina
 window.addEventListener("scroll", function () {
   const scrolled = window.pageYOffset;
   const curtainContainer = document.getElementById("curtainContainer");
@@ -229,7 +138,7 @@ window.addEventListener("scroll", function () {
         if (scrollIndicator) {
           scrollIndicator.style.display = "none";
         }
-        // CORREÇÃO: Força o scroll para o topo após a cortina desaparecer
+        // Força o scroll para o topo após a cortina desaparecer
         window.scrollTo({ top: 0, behavior: "smooth" });
       }, 500);
     }
@@ -352,7 +261,6 @@ function createSpecialParticles() {
 function handleScrollAnimations() {
   const elementsToAnimate = [
     document.getElementById("introText"),
-    document.getElementById("logoTitle"),
     document.getElementById("descriptionBox"),
   ];
 
@@ -543,7 +451,7 @@ function handleParallax() {
   });
 }
 
-// Função para criar a grade de projetos - ATUALIZADA
+// Função para criar a grade de projetos (Desktop)
 function createProjectsGrid() {
   const projectsGrid = document.getElementById("projectsGrid");
   if (!projectsGrid) return;
@@ -555,12 +463,13 @@ function createProjectsGrid() {
     projectCard.className = "project-card";
     projectCard.setAttribute("data-project-id", project.id);
 
-    // HTML ATUALIZADO: Removido o conteúdo abaixo da imagem
     projectCard.innerHTML = `
       <div class="project-image">
         <img src="${project.image}" alt="${project.title}" onerror="this.src='src/img/placeholder.jpeg'">
         <div class="project-overlay">
           <div class="project-number">${project.id}</div>
+          <div class="project-title">${project.title}</div>
+          <div class="project-subtitle">${project.subtitle}</div>
           <div class="project-view-text">Ver Projeto</div>
         </div>
       </div>
@@ -569,6 +478,64 @@ function createProjectsGrid() {
     projectCard.addEventListener("click", () => openProjectModal(project.id));
     projectsGrid.appendChild(projectCard);
   });
+}
+
+// Função para criar o carrossel de projetos (Mobile)
+function createProjectsCarousel() {
+  const carouselList = document.getElementById("projectsCarouselList");
+  if (!carouselList) return;
+
+  carouselList.innerHTML = "";
+
+  projectsData.forEach((project) => {
+    const slide = document.createElement("li");
+    slide.className = "splide__slide";
+    slide.setAttribute("data-project-id", project.id);
+
+    slide.innerHTML = `
+      <img src="${project.image}" alt="${project.title}" onerror="this.src='src/img/placeholder.jpeg'">
+      <div class="slide-project-overlay">
+        <div class="project-number">${project.id}</div>
+        <div class="project-title">${project.title}</div>
+        <div class="project-subtitle">${project.subtitle}</div>
+        <div class="project-view-text">Toque para ver detalhes</div>
+      </div>
+    `;
+
+    slide.addEventListener("click", () => openProjectModal(project.id));
+    carouselList.appendChild(slide);
+  });
+
+  // Inicializar carrossel de projetos apenas se existir
+  initProjectsCarousel();
+}
+
+// Inicializa o carrossel de projetos
+function initProjectsCarousel() {
+  const carouselElement = document.getElementById("projectsCarousel");
+  if (!carouselElement) return;
+
+  try {
+    new Splide("#projectsCarousel", {
+      type: "slide",
+      perPage: 1,
+      focus: "center",
+      gap: "1rem",
+      pagination: true,
+      arrows: true,
+      autoplay: false,
+      speed: 600,
+      easing: "cubic-bezier(0.4, 0, 0.2, 1)",
+      breakpoints: {
+        768: {
+          perPage: 1,
+          gap: "0.5rem",
+        },
+      },
+    }).mount();
+  } catch (error) {
+    console.error("Erro ao inicializar carrossel de projetos:", error);
+  }
 }
 
 // Função para abrir o modal do projeto
@@ -656,16 +623,16 @@ function initializeApp() {
   handleActiveNav();
   handleParallax();
 
-  // Inicializa carrossel
+  // Inicializa carrossel de homenagens
   if (typeof Splide !== "undefined") {
     initCarousel();
   } else {
-    // Tenta novamente após um delay se Splide não estiver carregado
     setTimeout(initCarousel, 500);
   }
 
-  // Inicializar grade de projetos
+  // Inicializar grade de projetos e carrossel
   createProjectsGrid();
+  createProjectsCarousel();
 
   // Event listener para redimensionamento
   let resizeTimeout;
