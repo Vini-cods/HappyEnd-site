@@ -1,93 +1,152 @@
 // Estado da cortina
 let curtainOpened = false;
 
-// Dados dos projetos TCC ATUALIZADOS
+// Dados dos projetos TCC ATUALIZADOS (12 projetos) - EMBARALHADOS
 const projectsData = [
   {
     id: 1,
-    title: "Librali",
-    subtitle: "A vida além dos sons",
-    members:
-      "Guilherme Bastos, Jefferson Silva, Nicole Kiyan, Karina Pagnani, Rafaela Matzak, Sarah Pontes",
-    image: "src/img/librali.jpeg",
-    description:
-      "Uma plataforma educacional dedicada a democratizar o ensino de LIBRAS, tornando o aprendizado acessível e completamente gratuito para todos. Oferecemos uma experiência completa tanto em versão web quanto mobile, projetada para atender diferentes perfis de aprendizes.",
-    problem:
-      "Falta de acesso a cursos de LIBRAS gratuitos e de qualidade, dificultando a inclusão social de pessoas surdas e a capacitação de ouvintes para comunicação inclusiva.",
-    solution:
-      "Desenvolvimento de uma plataforma completa com cursos para adultos e área kids gamificada, oferecendo ensino de LIBRAS de forma acessível, interativa e gratuita.",
-    results:
-      "Plataforma com metodologia prática e interativa para adultos e interface lúdica para crianças, promovendo o primeiro contato com LIBRAS de forma natural e divertida.",
-    tags: ["LIBRAS", "Inclusão", "Educação", "Acessibilidade"],
+    title: "Conecta Libras",
+    subtitle: "Comunicação em tempo real para deficientes auditivos",
+    members: "Beatriz Torres, Júlia de Freitas, Abigail Guimarães, Priscila da Silva",
+    image: "src/img/ConectaLibras.png",
+    description: "Aplicativo que reconhece fala e traduz para Libras através de avatar 3D, com suporte a texto e sensores IoT para ambientes.",
+    problem: "Barreiras de comunicação para pessoas com deficiência auditiva em situações cotidianas e ambientes diversos.",
+    solution: "Sistema integrado mobile, web e IoT com reconhecimento de voz, avatar 3D para Libras e transcrição em tempo real.",
+    results: "Solução completa de acessibilidade comunicacional que promove inclusão social em diferentes contextos.",
+    tags: ["Libras", "Acessibilidade", "IoT", "Comunicação"],
   },
   {
     id: 2,
-    title: "VisionCash",
-    subtitle: "Autonomia financeira para deficientes visuais",
-    members:
-      "Cauã Ross, Yago Dias, Leonardo Freitas, Mateus Silva, Marcelo Oliveira, Vitor Vasconcelos",
-    image: "src/img/banner Happ.png",
-    description:
-      "Tecnologia assistiva que reconhece e conta cédulas de forma inteligente, promovendo autonomia e inclusão para pessoas com deficiência visual.",
-    problem:
-      "Dificuldade de pessoas com deficiência visual em identificar e contar cédulas de dinheiro, limitando sua independência em transações financeiras.",
-    solution:
-      "Sistema que utiliza IoT e inteligência artificial para identificar valores de cédulas e registrar transações em um aplicativo acessível.",
-    results:
-      "Dispositivo funcional que garante segurança, praticidade e independência no manuseio do dinheiro para pessoas com deficiência visual.",
-    tags: ["Acessibilidade", "Tecnologia Assistiva", "IoT", "Inclusão"],
-  },
-  {
-    id: 3,
     title: "AURA",
     subtitle: "Aprendizagem com Uso de Realidade Aumentada",
-    members:
-      "Gabriel Espindola, Cristian Mariano, Josué Bademian, Lucas Zamboti, Vinicius Pinhas",
+    members: "Gabriel Espindola, Cristian Mariano, Josué Bademian, Lucas Zamboti, Vinicius Pinhas",
     image: "src/img/AURA.png",
-    description:
-      "Sistema híbrido de educação inclusiva que integra aplicativo móvel e dispositivo IoT. Personagens que ensinam, cartas que falam, tecnologia que inclui.",
-    problem:
-      "Falta de recursos educacionais inclusivos e interativos que atendam às necessidades de crianças com diferentes estilos de aprendizagem.",
-    solution:
-      "Integração de app com dispositivo IoT onde crianças escaneiam cartas físicas com personagens inclusivos para acessar minigames educativos.",
-    results:
-      "Sistema com 3 personagens inclusivos e 15 minigames educativos, proporcionando experiência interativa, acessível e inclusiva.",
+    description: "Sistema híbrido de educação inclusiva que integra aplicativo móvel e dispositivo IoT. Personagens que ensinam, cartas que falam, tecnologia que inclui.",
+    problem: "Falta de recursos educacionais inclusivos e interativos que atendam às necessidades de crianças com diferentes estilos de aprendizagem.",
+    solution: "Integração de app com dispositivo IoT onde crianças escaneiam cartas físicas com personagens inclusivos para acessar minigames educativos.",
+    results: "Sistema com 3 personagens inclusivos e 15 minigames educativos, proporcionando experiência interativa, acessível e inclusiva.",
     tags: ["Educação Inclusiva", "Realidade Aumentada", "IoT", "Gamificação"],
   },
   {
+    id: 3,
+    title: "Jellyfish",
+    subtitle: "Lembretes inteligentes de medicamentos",
+    members: "Guilherme Umberto, Kauã Nunes, Rian dos Santos, Guilherme Rocha",
+    image: "src/img/Jellyfish.png",
+    description: "Dispositivo IoT que emite alertas sonoros e visuais nos horários de medicação, configurável via app web e mobile.",
+    problem: "Dificuldade de crianças, especialmente neurodivergentes, em seguir rotinas de medicação sem dependência de smartphones.",
+    solution: "Acessório IoT independente que se prende à garrafa e alerta visual/sonoramente nos horários programados.",
+    results: "Solução prática que promove autonomia e saúde sem depender do uso de celulares em ambientes escolares.",
+    tags: ["Saúde", "IoT", "Autonomia", "Neurodivergência"],
+  },
+  {
     id: 4,
-    title: "PositiveSense",
-    subtitle: "Tecnologia e inclusão para um ambiente escolar tranquilo",
-    members:
-      "Ana Luisa Alves, Heloisa Machado, Manuela Scarpari, Manuela Costa, Ryan Santos",
-    image: "src/img/positive.png",
-    description:
-      "Sensor de ruído escolar com tecnologia IoT e site interativo sobre TEA com orientações, playlists e jogos calmantes.",
-    problem:
-      "Altos níveis de ruído em sala de aula que prejudicam o aprendizado, especialmente de alunos com TEA, e falta de recursos educativos sobre autismo.",
-    solution:
-      "Sensor IoT que monitora ruído e envia histórico via app, combinado com site educativo sobre TEA com jogos interativos e conteúdos calmantes.",
-    results:
-      "Sistema de monitoramento de ruído funcional e site educativo que promove maior compreensão sobre TEA e oferece recursos para relaxamento.",
-    tags: ["TEA", "IoT", "Inclusão", "Educação"],
+    title: "English Adventure",
+    subtitle: "Desbloqueie um novo idioma, conecte o jogo à aprendizagem",
+    members: "Julya Teixeira, Sofia Santos, Sofia Ornellas, Thaynara Silva, Victor Rocha",
+    image: "src/img/english.png",
+    description: "Sistema gamificado para ensino infantil de inglês com tabuleiro IoT integrado, site com desafios e aplicativo de acompanhamento.",
+    problem: "Dificuldade no ensino de inglês para crianças através de métodos tradicionais pouco engajadores e interativos.",
+    solution: "Tabuleiro físico com IoT que propõe desafios, combinado com site e app que acompanham o progresso e auxiliam no aprendizado.",
+    results: "Sistema completo que torna o aprendizado de inglês divertido e interativo para crianças através da gamificação e tecnologia.",
+    tags: ["Inglês", "Gamificação", "Educação Infantil", "IoT"],
   },
   {
     id: 5,
-    title: "English Adventure",
-    subtitle: "Desbloqueie um novo idioma, conecte o jogo à aprendizagem",
-    members:
-      "Julya Teixeira, Sofia Santos, Sofia Ornellas, Thaynara Silva, Victor Rocha",
-    image: "src/img/english.png",
-    description:
-      "Sistema gamificado para ensino infantil de inglês com tabuleiro IoT integrado, site com desafios e aplicativo de acompanhamento.",
-    problem:
-      "Dificuldade no ensino de inglês para crianças através de métodos tradicionais pouco engajadores e interativos.",
-    solution:
-      "Tabuleiro físico com IoT que propõe desafios, combinado com site e app que acompanham o progresso e auxiliam no aprendizado.",
-    results:
-      "Sistema completo que torna o aprendizado de inglês divertido e interativo para crianças através da gamificação e tecnologia.",
-    tags: ["Inglês", "Gamificação", "Educação Infantil", "IoT"],
+    title: "Librali",
+    subtitle: "A vida além dos sons",
+    members: "Guilherme Bastos, Jefferson Silva, Nicole Kiyan, Karina Pagnani, Rafaela Matzak, Sarah Pontes",
+    image: "src/img/librali.jpeg",
+    description: "Uma plataforma educacional dedicada a democratizar o ensino de LIBRAS, tornando o aprendizado acessível e completamente gratuito para todos. Oferecemos uma experiência completa tanto em versão web quanto mobile, projetada para atender diferentes perfis de aprendizes.",
+    problem: "Falta de acesso a cursos de LIBRAS gratuitos e de qualidade, dificultando a inclusão social de pessoas surdas e a capacitação de ouvintes para comunicação inclusiva.",
+    solution: "Desenvolvimento de uma plataforma completa com cursos para adultos e área kids gamificada, oferecendo ensino de LIBRAS de forma acessível, interativa e gratuita.",
+    results: "Plataforma com metodologia prática e interativa para adultos e interface lúdica para crianças, promovendo o primeiro contato com LIBRAS de forma natural e divertida.",
+    tags: ["LIBRAS", "Inclusão", "Educação", "Acessibilidade"],
   },
+  {
+    id: 6,
+    title: "EducaBoard",
+    subtitle: "Comunicação alternativa para crianças",
+    members: "Júlia Magalhães, Pedro Couto, Robert da Costa, Matheus Gregorio, Maria Eduarda",
+    image: "src/img/EducaBoard.png",
+    description: "Dispositivo IoT com botões físicos que reproduzem palavras em áudio para crianças com dificuldades de fala.",
+    problem: "Dificuldade de comunicação verbal em crianças com necessidades especiais de expressão.",
+    solution: "Sistema com botões físicos IoT que enviam comandos para app mobile reproduzir áudios correspondentes.",
+    results: "Ferramenta de comunicação alternativa que promove autonomia e inclusão social para crianças não-verbais.",
+    tags: ["Comunicação", "IoT", "Inclusão", "Educação Especial"],
+  },
+  {
+    id: 7,
+    title: "VisionCash",
+    subtitle: "Autonomia financeira para deficientes visuais",
+    members: "Cauã Ross, Yago Dias, Leonardo Freitas, Mateus Silva, Marcelo Oliveira, Vitor Vasconcelos",
+    image: "src/img/banner Happ.png",
+    description: "Tecnologia assistiva que reconhece e conta cédulas de forma inteligente, promovendo autonomia e inclusão para pessoas com deficiência visual.",
+    problem: "Dificuldade de pessoas com deficiência visual em identificar e contar cédulas de dinheiro, limitando sua independência em transações financeiras.",
+    solution: "Sistema que utiliza IoT e inteligência artificial para identificar valores de cédulas e registrar transações em um aplicativo acessível.",
+    results: "Dispositivo funcional que garante segurança, praticidade e independência no manuseio do dinheiro para pessoas com deficiência visual.",
+    tags: ["Acessibilidade", "Tecnologia Assistiva", "IoT", "Inclusão"],
+  },
+  {
+    id: 8,
+    title: "Modsy",
+    subtitle: "Moda inteligente e acessível",
+    members: "Giovanna Mendes, Brenda de Oliveira, Milena Maria, Evelyn Victoria, Igor Matos",
+    image: "src/img/Modsy.png",
+    description: "Guarda-roupa virtual inteligente com IA para sugestões de combinações e sensores IoT para auxiliar pessoas com deficiência visual.",
+    problem: "Dificuldade na organização de roupas e escolha de combinações, especialmente para pessoas com deficiência visual.",
+    solution: "App mobile com IA para organização e sugestões de outfits, combinado com sensores IoT para identificação de peças físicas.",
+    results: "Sistema que oferece praticidade, autonomia e acessibilidade no vestir-se no dia a dia.",
+    tags: ["Moda", "IA", "Acessibilidade", "IoT"],
+  },
+  {
+    id: 9,
+    title: "Artflow",
+    subtitle: "Expressão criativa para todas as crianças",
+    members: "Bruno Arthur, Matheus Lopes, Thalita Andrade, Vinícius Briches, Vitor Martins",
+    image: "src/img/Artflow.png",
+    description: "Ambiente criativo e inclusivo para crianças neurotípicas e neurodivergentes desenharem, montarem colagens e inventarem histórias.",
+    problem: "Falta de espaços criativos inclusivos que atendam às necessidades de crianças com diferentes habilidades e estilos de aprendizagem.",
+    solution: "Combinação de app mobile, web e IoT com painel físico interativo que conecta desenho físico ao digital em tempo real.",
+    results: "Espaço lúdico e inclusivo que promove expressão artística e convívio social através da integração entre físico e digital.",
+    tags: ["Arte", "Inclusão", "Criatividade", "IoT"],
+  },
+  {
+    id: 10,
+    title: "PositiveSense",
+    subtitle: "Tecnologia e inclusão para um ambiente escolar tranquilo",
+    members: "Ana Luisa Alves, Heloisa Machado, Manuela Scarpari, Manuela Costa, Ryan Santos",
+    image: "src/img/positive.png",
+    description: "Sensor de ruído escolar com tecnologia IoT e site interativo sobre TEA com orientações, playlists e jogos calmantes.",
+    problem: "Altos níveis de ruído em sala de aula que prejudicam o aprendizado, especialmente de alunos com TEA, e falta de recursos educativos sobre autismo.",
+    solution: "Sensor IoT que monitora ruído e envia histórico via app, combinado com site educativo sobre TEA com jogos interativos e conteúdos calmantes.",
+    results: "Sistema de monitoramento de ruído funcional e site educativo que promove maior compreensão sobre TEA e oferece recursos para relaxamento.",
+    tags: ["TEA", "IoT", "Inclusão", "Educação"],
+  },
+  {
+    id: 11,
+    title: "KidzUp",
+    subtitle: "Aprendizado lúdico com interação física",
+    members: "Clara Eloah, Amanda Sales, Matheus Ferreira, Erick Alipio, Antonio Roberto",
+    image: "src/img/KidzUp.png",
+    description: "Sistema educacional com dispositivo físico tipo controle para respostas, integrado com app web e painel para pais.",
+    problem: "Falta de engajamento em atividades educativas tradicionais e dificuldade de acompanhamento parental.",
+    solution: "Dispositivo físico interativo com feedback imediato, conectado a plataforma web com acompanhamento em tempo real.",
+    results: "Experiência de aprendizado divertida e envolvente com participação ativa dos pais no progresso das crianças.",
+    tags: ["Educação", "Gamificação", "IoT", "Família"],
+  },
+  {
+    id: 12,
+    title: "Refx",
+    subtitle: "Refeitório inteligente e comunicativo",
+    members: "Felipe Cavalcanti, Gabriel Santos, Murilo Miguel, John Sutkewicius, Emanuelly Cristini, Ana Clara",
+    image: "src/img/Refx.png",
+    description: "Sistema de monitoramento e comunicação para refeitórios escolares com controle de ruído, cardápio digital e avisos.",
+    problem: "Falta de organização e comunicação eficiente em refeitórios escolares, com desperdício de comida e ruído excessivo.",
+    solution: "Dispositivos IoT para monitorar ruído, exibir cardápios e avisos, com app para gestão pela nutricionista.",
+    results: "Ambiente mais organizado, consciente e acolhedor no refeitório escolar com comunicação eficiente.",
+    tags: ["Educação", "IoT", "Sustentabilidade", "Comunicação"],
+  }
 ];
 
 // Scroll para controle da cortina
@@ -120,9 +179,8 @@ window.addEventListener("scroll", function () {
     // Fade do texto da cortina
     if (curtainText) {
       curtainText.style.opacity = `${1 - progress}`;
-      curtainText.style.transform = `translate(-50%, -50%) scale(${
-        1 - progress * 0.3
-      })`;
+      curtainText.style.transform = `translate(-50%, -50%) scale(${1 - progress * 0.3
+        })`;
     }
 
     // Esconde o indicador de scroll
