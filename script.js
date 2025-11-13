@@ -2,8 +2,7 @@
 let curtainOpened = false;
 
 // Dados dos projetos TCC ATUALIZADOS (12 projetos) - EMBARALHADOS
-const projectsData = [
-  {
+const projectsData = [{
     id: 1,
     title: "Conecta Libras",
     subtitle: "Comunicação em tempo real para deficientes auditivos",
@@ -43,7 +42,7 @@ const projectsData = [
     id: 4,
     title: "English Adventure",
     subtitle: "Desbloqueie um novo idioma, conecte o jogo à aprendizagem",
-    members: "Julya Teixeira, Sofia Santos, Sofia Ornellas, Thaynara Silva, Victor Rocha",
+    members: "Julya Teixeira, Sofia Santos, Sofia Ornellas, Thaynara Silva, Victor Cavalcante",
     image: "src/img/english.png",
     description: "Sistema gamificado para ensino infantil de inglês com tabuleiro IoT integrado, site com desafios e aplicativo de acompanhamento.",
     problem: "Dificuldade no ensino de inglês para crianças através de métodos tradicionais pouco engajadores e interativos.",
@@ -197,7 +196,10 @@ window.addEventListener("scroll", function () {
           scrollIndicator.style.display = "none";
         }
         // Força o scroll para o topo após a cortina desaparecer
-        window.scrollTo({ top: 0, behavior: "smooth" });
+        window.scrollTo({
+          top: 0,
+          behavior: "smooth"
+        });
       }, 500);
     }
   }
@@ -329,8 +331,7 @@ function handleScrollAnimations() {
           entry.target.classList.add("visible");
         }
       });
-    },
-    {
+    }, {
       threshold: 0.3,
       rootMargin: "0px 0px -100px 0px",
     }
@@ -722,3 +723,66 @@ console.log(
   "%c🎭 Desenvolvido com amor para SESI SENAI Ferraz de Vasconcelos",
   "color: #FFA500; font-size: 12px;"
 );
+
+
+// Inicializa o carrossel de desenvolvedores - 6 CARDS
+function initDevsCarousel() {
+  const devsCarouselElement = document.getElementById("devsCarousel");
+  if (!devsCarouselElement) {
+    console.warn("Carrossel de desenvolvedores não encontrado");
+    return;
+  }
+
+  // Verifica se Splide está disponível
+  if (typeof Splide === 'undefined') {
+    console.error("Biblioteca Splide não carregada");
+    setTimeout(initDevsCarousel, 200);
+    return;
+  }
+
+  try {
+    const devsCarousel = new Splide("#devsCarousel", {
+      type: "slide", // Mais leve que 'loop'
+      perPage: 3, // Mostra 3 cards por vez
+      perMove: 1, // Move 1 card por vez
+      gap: "1.5rem",
+      pagination: true,
+      arrows: true,
+      autoplay: false, // Desativado para performance
+      speed: 500,
+      easing: "ease",
+      // Configurações para 6 cards no total
+      rewind: true, // Volta ao início quando chega no final
+      breakpoints: {
+        1200: {
+          perPage: 2, // 2 cards em telas médias
+          gap: "1rem",
+        },
+        768: {
+          perPage: 1, // 1 card em mobile
+          gap: "0.5rem",
+        },
+      },
+    });
+
+    devsCarousel.mount();
+    console.log("Carrossel de desenvolvedores (6 cards) inicializado");
+
+  } catch (error) {
+    console.error("Erro ao inicializar carrossel de devs:", error);
+  }
+}
+
+// Inicialização simplificada
+function initAllCarousels() {
+  setTimeout(() => {
+    initDevsCarousel();
+  }, 100);
+}
+
+// Inicialização
+if (document.readyState === 'loading') {
+  document.addEventListener('DOMContentLoaded', initAllCarousels);
+} else {
+  initAllCarousels();
+}

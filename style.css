@@ -576,6 +576,7 @@ body {
   transform: rotate(180deg) translateY(50%);
   height: fit-content;
   margin-right: 20px;
+  margin-top: 280px;
   padding: 20px 0;
 }
 
@@ -746,9 +747,10 @@ body {
     transform: none;
     flex-direction: row;
     gap: 15px;
-    position: static;
+    /* position: static; */
     margin-right: 0;
     margin-bottom: 20px;
+    margin-top: 30px;
     padding: 0;
     text-align: center;
   }
@@ -1652,4 +1654,210 @@ body::-webkit-scrollbar {
   outline: 2px solid #ffd700;
   outline-offset: 4px;
 }
-0,
+
+/* CARROSSEL OTIMIZADO - 6 CARDS */
+.carousel-section.devs-section {
+  background: rgba(10, 10, 10, 0.95);
+  padding: 80px 20px;
+  position: relative;
+  min-height: auto;
+}
+
+.devs-subtitle {
+  text-align: center;
+  font-size: 1.2rem;
+  margin-bottom: 50px;
+  color: #ffa500;
+  font-style: italic;
+}
+
+/* Container do carrossel otimizado */
+#devsCarousel .splide__track {
+  overflow: visible;
+}
+
+/* Slides simplificados */
+#devsCarousel .splide__slide {
+  height: 420px; /* Reduzi um pouco a altura */
+  background: rgba(26, 26, 26, 0.8);
+  border: 1px solid rgba(255, 215, 0, 0.2);
+  border-radius: 15px;
+  overflow: hidden;
+  transition: transform 0.3s ease, border-color 0.3s ease;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+}
+
+#devsCarousel .splide__slide:hover {
+  transform: translateY(-5px);
+  border-color: rgba(255, 215, 0, 0.5);
+}
+
+/* Card do desenvolvedor simplificado */
+.dev-card {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Imagem otimizada */
+.dev-image-container {
+  position: relative;
+  width: 100%;
+  height: 50%; /* Ajuste na proporção */
+  overflow: hidden;
+}
+
+.dev-image-container img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  transition: transform 0.4s ease;
+}
+
+#devsCarousel .splide__slide:hover .dev-image-container img {
+  transform: scale(1.05);
+}
+
+.dev-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(to bottom, transparent 50%, rgba(0, 0, 0, 0.8) 100%);
+}
+
+/* Informações otimizadas */
+.dev-info {
+  padding: 15px;
+  background: rgba(18, 18, 18, 0.9);
+  height: 50%; /* Ajuste na proporção */
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.dev-name {
+  font-size: 1.2rem;
+  font-weight: 700;
+  color: #ffd700;
+  margin-bottom: 5px;
+}
+
+.dev-role {
+  font-size: 0.9rem;
+  color: #ffa500;
+  margin-bottom: 8px;
+  font-style: italic;
+}
+
+.dev-description {
+  font-size: 0.85rem;
+  line-height: 1.4;
+  color: #e6e6e6;
+  opacity: 0.9;
+}
+
+/* Navegação otimizada */
+#devsCarousel .splide__arrow {
+  background: rgba(255, 215, 0, 0.2);
+  width: 3rem;
+  height: 3rem;
+  border: 1px solid rgba(255, 215, 0, 0.3);
+  transition: all 0.2s ease;
+}
+
+#devsCarousel .splide__arrow:hover {
+  background: rgba(255, 215, 0, 0.3);
+  transform: scale(1.1);
+}
+
+#devsCarousel .splide__arrow svg {
+  fill: #ffd700;
+}
+
+#devsCarousel .splide__pagination {
+  bottom: -35px;
+}
+
+#devsCarousel .splide__pagination__page {
+  background: rgba(255, 255, 255, 0.3);
+  width: 8px;
+  height: 8px;
+  margin: 0 3px;
+}
+
+#devsCarousel .splide__pagination__page.is-active {
+  background: #ffd700;
+  transform: scale(1.2);
+}
+
+/* RESPONSIVIDADE PARA 6 CARDS */
+@media (max-width: 1200px) {
+  #devsCarousel .splide__slide {
+    height: 400px;
+  }
+}
+
+@media (max-width: 1024px) {
+  .carousel-section.devs-section {
+    padding: 60px 15px;
+  }
+  
+  #devsCarousel .splide__slide {
+    height: 380px;
+  }
+}
+
+@media (max-width: 768px) {
+  .carousel-section.devs-section {
+    padding: 50px 10px;
+  }
+  
+  #devsCarousel .splide__slide {
+    height: 350px;
+  }
+  
+  .dev-image-container {
+    height: 45%;
+  }
+  
+  .dev-info {
+    height: 55%;
+    padding: 12px;
+  }
+  
+  .dev-name {
+    font-size: 1.1rem;
+  }
+  
+  .dev-role {
+    font-size: 0.85rem;
+  }
+  
+  .dev-description {
+    font-size: 0.8rem;
+  }
+}
+
+@media (max-width: 480px) {
+  #devsCarousel .splide__slide {
+    height: 320px;
+  }
+  
+  .devs-subtitle {
+    margin-bottom: 30px;
+    font-size: 1.1rem;
+  }
+  
+  .dev-name {
+    font-size: 1rem;
+  }
+  
+  .dev-description {
+    font-size: 0.75rem;
+    line-height: 1.3;
+  }
+}
