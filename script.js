@@ -429,7 +429,7 @@ function handleResize() {
   createSpecialParticles();
 }
 
-// Inicializa o carrossel Splide
+
 function initCarousel() {
   const carouselElement = document.getElementById("imageCarousel");
   if (!carouselElement) return;
@@ -448,17 +448,29 @@ function initCarousel() {
       pauseOnFocus: true,
       speed: 800,
       easing: "cubic-bezier(0.4, 0, 0.2, 1)",
+      // Configurações simplificadas para as bolinhas
+      paginationKeyboard: true,
       breakpoints: {
+        1200: {
+          perPage: 3,
+          gap: "1.2rem",
+        },
         1024: {
           perPage: 2,
           gap: "1rem",
         },
         768: {
           perPage: 1,
-          gap: "0.5rem",
+          gap: "0.8rem",
         },
+        480: {
+          perPage: 1,
+          gap: "0.5rem",
+        }
       },
     }).mount();
+    
+    console.log("Carrossel de professores inicializado com sucesso");
   } catch (error) {
     console.error("Erro ao inicializar carrossel:", error);
   }
