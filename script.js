@@ -377,7 +377,6 @@ function createProjectsCarousel() {
           <p class="project-subtitle">${project.subtitle}</p>
           <p class="project-members">${project.members}</p>
           <div class="project-actions">
-            <a href="${project.website}" class="project-link">Visite o Site</a>
             <button class="project-details-btn" onclick="window.openProjectModal(${project.id})">Ver Detalhes</button>
           </div>
         </div>
