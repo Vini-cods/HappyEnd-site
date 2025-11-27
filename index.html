@@ -1,473 +1,551 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>HappyEnd</title>
+    <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="responsive.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/@splidejs/splide@4.1.4/dist/css/splide.min.css"
+    />
+  </head>
 
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>HappyEnd</title>
-  <link rel="stylesheet" href="style.css" />
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@splidejs/splide@4.1.4/dist/css/splide.min.css" />
-</head>
+  <body>
+    <!-- Partículas de fundo -->
+    <div class="particles" id="particles"></div>
 
-<body>
-  <!-- Partículas de fundo -->
-  <div class="particles" id="particles"></div>
-
-  <!-- Menu de Navegação -->
-  <nav class="navbar" id="navbar">
-    <ul class="nav-menu" id="navMenu">
-      <li class="nav-item">
-        <a href="#inicio" class="nav-link active" data-section="inicio">Início</a>
-      </li>
-      <li class="nav-item">
-        <a href="#fotos" class="nav-link" data-section="fotos">Devs</a>
-      </li>
-      <li class="nav-item">
-        <a href="#projetos-tcc" class="nav-link" data-section="projetos-tcc">TCCs</a>
-      </li>
-      <li class="nav-item">
-        <a href="#agradecimentos" class="nav-link" data-section="agradecimentos">Agradecimentos</a>
-      </li>
-    </ul>
-    <button class="mobile-menu-btn" id="mobileMenuBtn">☰</button>
-  </nav>
-
-  <!-- Conteúdo Principal -->
-  <main class="main-content" id="inicio">
-    <div class="intro-text" id="introText">E com vocês nosso projeto...</div>
-    <div class="logo">HappyEnd</div>
-  </main>
-
-  <!-- Cortina Teatral -->
-  <div class="curtain-container" id="curtainContainer">
-    <div class="curtain-top" id="curtainTop"></div>
-    <div class="curtain curtain-left" id="curtainLeft"></div>
-    <div class="curtain curtain-right" id="curtainRight"></div>
-    <div class="curtain-text" id="curtainText">
-      Prepare-se para conhecer<br />
-      <strong>HappyEnd</strong>
-    </div>
-  </div>
-
-  <!-- Indicador de scroll -->
-  <div class="scroll-indicator" id="scrollIndicator">
-    <div>Role para baixo</div>
-    <div class="arrow">↓</div>
-  </div>
-
-  <!-- Holofotes -->
-  <div class="spotlight spotlight-1"></div>
-  <div class="spotlight spotlight-2"></div>
-
-  <!-- Seção: Descrição do projeto -->
-  <section class="section" id="projetos">
-    <div class="description-box" id="descriptionBox">
-      <p>
-        O projeto HappyEnd tem como proposta exaltar os trabalhos de conclusão
-        de curso (TCC) desenvolvidos pelos estudantes do 3º ano A e B, em
-        parceria com a equipe do SESI SENAI de Ferraz de Vasconcelos. Esses
-        projetos foram criados com o intuito de oferecer soluções práticas
-        para desafios enfrentados no dia a dia e também para problemas mais
-        amplos da sociedade.
-      </p>
-
-      <p>
-        Mais do que apresentar ideias inovadoras, o HappyEnd busca dar
-        visibilidade aos talentos dos alunos e agradecer a todos os
-        profissionais que contribuíram ao longo dessa jornada. O nome do
-        projeto não foi escolhido por acaso — HappyEnd, que significa "final
-        feliz", traduz exatamente o sentimento de dever cumprido e celebração
-        por um ciclo que se encerra com sucesso para todas as equipes
-        envolvidas.
-      </p>
-    </div>
-  </section>
-
-  <!-- Seção: Desenvolvedores do Site -->
- <!-- Seção: Desenvolvedores do Site -->
-<section class="carousel-section devs-section" id="fotos">
-  <h2 class="carousel-title">Desenvolvedores do Site</h2>
-  <p class="devs-subtitle">A equipe que deu vida ao HappyEnd</p>
-  <div class="splide" id="devsCarousel">
-    <div class="splide__track">
-      <ul class="splide__list">
-        <!-- CARD 1 -->
-        <li class="splide__slide dev-slide">
-          <div class="dev-card">
-            <div class="dev-image-container">
-              <img src="src/img/developers/dev6.jpeg" alt="Desenvolvedor 1" onerror="this.src='src/img/placeholder.jpeg'" />
-              <div class="dev-overlay"></div>
-            </div>
-            <div class="dev-info">
-              <h3 class="dev-name">Mateus Alcantara</h3>
-              <p class="dev-role">Scrum Master & Full Stack Developer</p>
-              <p class="dev-description">Atuou como Scrum Master e desenvolveu o header, footer e as telas informativas dos professores e grupos, integrando as seções com coesão e funcionalidade.</p>
-            </div>
-          </div>
+    <!-- Menu de Navegação -->
+    <nav class="navbar" id="navbar">
+      <ul class="nav-menu" id="navMenu">
+        <li class="nav-item">
+          <a href="#inicio" class="nav-link active" data-section="inicio"
+            >Início</a
+          >
         </li>
-        
-        <!-- CARD 2 -->
-        <li class="splide__slide dev-slide">
-          <div class="dev-card">
-            <div class="dev-image-container">
-              <img src="src/img/developers/dev5.jpeg" alt="Desenvolvedor 2" onerror="this.src='src/img/placeholder.jpeg'" />
-              <div class="dev-overlay"></div>
-            </div>
-            <div class="dev-info">
-              <h3 class="dev-name">Vinicius Briches </h3>
-              <p class="dev-role">Scrum Master & Frontend Developer</p>
-              <p class="dev-description">Liderou a equipe como Scrum Master e colaborou na criação dos cards de trabalhos, organizando o fluxo de desenvolvimento e garantindo a entrega de qualidade.</p>
-            </div>
-          </div>
+        <li class="nav-item">
+          <a href="#fotos" class="nav-link" data-section="fotos">Devs</a>
         </li>
-        
-        <!-- CARD 3 -->
-        <li class="splide__slide dev-slide">
-          <div class="dev-card">
-            <div class="dev-image-container">
-              <img src="src/img/developers/dev1.jpeg" alt="Desenvolvedor 3" onerror="this.src='src/img/placeholder.jpeg'" />
-              <div class="dev-overlay"></div>
-            </div>
-            <div class="dev-info">
-              <h3 class="dev-name">Karina Pagnani</h3>
-              <p class="dev-role">Frontend Developer</p>
-              <p class="dev-description">Implementou o carrossel dos professores, destacando cada mentor com design elegante e animações harmônicas.</p>
-            </div>
-          </div>
+        <li class="nav-item">
+          <a href="#projetos-tcc" class="nav-link" data-section="projetos-tcc"
+            >TCCs</a
+          >
         </li>
-        
-        <!-- CARD 4 -->
-        <li class="splide__slide dev-slide">
-          <div class="dev-card">
-            <div class="dev-image-container">
-              <img src="src/img/developers/dev2.jpeg" alt="Desenvolvedor 4" onerror="this.src='src/img/placeholder.jpeg'" />
-              <div class="dev-overlay"></div>
-            </div>
-            <div class="dev-info">
-              <h3 class="dev-name">Rafaela Matzak</h3>
-              <p class="dev-role">Frontend Developer</p>
-              <p class="dev-description">Desenvolveu os cards que exibem os trabalhos dos alunos, garantindo uma apresentação organizada e visualmente atrativa.</p>
-            </div>
-          </div>
-        </li>
-        
-        <!-- CARD 5 -->
-        <li class="splide__slide dev-slide">
-          <div class="dev-card">
-            <div class="dev-image-container">
-              <img src="src/img/developers/dev4.jpeg" alt="Desenvolvedor 5" onerror="this.src='src/img/placeholder.jpeg'" />
-              <div class="dev-overlay"></div>
-            </div>
-            <div class="dev-info">
-              <h3 class="dev-name">Victor Cavalcante</h3>
-              <p class="dev-role">Frontend Developer</p>
-              <p class="dev-description">Desenvolveu o carrossel interativo que apresenta os alunos desenvolvedores, com transições suaves e design dinâmico.</p>
-            </div>
-          </div>
-        </li>
-        
-        <!-- CARD 6 -->
-        <li class="splide__slide dev-slide">
-          <div class="dev-card">
-            <div class="dev-image-container">
-              <img src="src/img/developers/dev3.jpeg" alt="Desenvolvedor 6" onerror="this.src='src/img/placeholder.jpeg'" />
-              <div class="dev-overlay"></div>
-            </div>
-            <div class="dev-info">
-              <h3 class="dev-name">Vitor Vasconcelos </h3>
-              <p class="dev-role">Desenvolvedor Frontend</p>
-              <p class="dev-description">Responsável pela criação da animação de entrada triunfal do site, garantindo uma introdução visual impactante e envolvente.</p>
-            </div>
-          </div>
+        <li class="nav-item">
+          <a
+            href="#agradecimentos"
+            class="nav-link"
+            data-section="agradecimentos"
+            >Agradecimentos</a
+          >
         </li>
       </ul>
-    </div>
-  </div>
-</section>
+      <button class="mobile-menu-btn" id="mobileMenuBtn">☰</button>
+    </nav>
 
-  <!-- Seção: Projetos TCC -->
-  <section class="section" id="projetos-tcc">
-    <div class="projects-container">
-      <!-- Título vertical -->
-      <div class="vertical-title">
-        <span>PROJETOS</span>
-        <span>NOSSOS</span>
-      </div>
+    <!-- Conteúdo Principal -->
+    <main class="main-content" id="inicio">
+      <div class="intro-text" id="introText">E com vocês nosso projeto...</div>
+      <div class="logo">HappyEnd</div>
+    </main>
 
-      <!-- Conteúdo dos projetos -->
-      <div class="projects-content">
-        <!-- Grade de projetos (Desktop) -->
-        <div class="projects-grid" id="projectsGrid">
-          <!-- Os projetos serão inseridos dinamicamente via JavaScript -->
-        </div>
-
-        <!-- Carrossel de projetos (Mobile) -->
-        <div class="projects-carousel splide" id="projectsCarousel">
-          <div class="splide__track">
-            <ul class="splide__list" id="projectsCarouselList">
-              <!-- Os projetos serão inseridos dinamicamente via JavaScript -->
-            </ul>
-          </div>
-        </div>
+    <!-- Cortina Teatral -->
+    <div class="curtain-container" id="curtainContainer">
+      <div class="curtain-top" id="curtainTop"></div>
+      <div class="curtain curtain-left" id="curtainLeft"></div>
+      <div class="curtain curtain-right" id="curtainRight"></div>
+      <div class="curtain-text" id="curtainText">
+        Prepare-se para conhecer<br />
+        <strong>HappyEnd</strong>
       </div>
     </div>
-  </section>
 
-  <!-- Carrossel de homenagens -->
-  <section class="carousel-section" id="agradecimentos">
-    <h2 class="carousel-title">Homenagem aos professores</h2>
-    <div class="splide" id="imageCarousel">
-      <div class="splide__track">
-        <ul class="splide__list">
-          <li class="splide__slide">
-            <img src="src/img/professores/susiPic.jpeg" alt="Prof Susi" />
-            <div class="slide-overlay">
-              <div class="person-name">Profª Susi</div>
-              <div class="person-role">Professora de língua portuguesa</div>
-              <div class="person-description">
-                Obrigado por toda dedicação e paciência em nos ensinar a arte
-                da escrita e comunicação. Sua paixão pela língua portuguesa
-                nos inspirou a ir além.
-              </div>
-            </div>
-          </li>
-          <li class="splide__slide">
-            <img src="src/img/professores/willianPic.jpeg" alt="Prof William" />
-            <div class="slide-overlay">
-              <div class="person-name">Profº William</div>
-              <div class="person-role">Professor de matemática</div>
-              <div class="person-description">
-                Gratidão por descomplicar os números e mostrar que a
-                matemática está em tudo. Seus ensinamentos foram fundamentais
-                para nossos projetos.
-              </div>
-            </div>
-          </li>
-          <li class="splide__slide">
-            <img src="src/img/professores/kelliPic.jpeg" alt="Prof Kelli" />
-            <div class="slide-overlay">
-              <div class="person-name">Profª Kelli</div>
-              <div class="person-role">Professora de biologia</div>
-              <div class="person-description">
-                A toda equipe que nos apoiou nessa jornada, fornecendo
-                estrutura, conhecimento e motivação para alcançarmos nossos
-                objetivos.
-              </div>
-            </div>
-          </li>
-          <li class="splide__slide">
-            <img src="src/img/professores/geoPic.jpeg" alt="Prof Geo" />
-            <div class="slide-overlay">
-              <div class="person-name">Profª Geo</div>
-              <div class="person-role">Professora de Geografia</div>
-              <div class="person-description">
-                A toda equipe que nos apoiou nessa jornada, fornecendo
-                estrutura, conhecimento e motivação para alcançarmos nossos
-                objetivos.
-              </div>
-            </div>
-          </li>
-          <li class="splide__slide">
-            <img src="src/img/professores/pabloPic.jpeg" alt="Prof Pablo" />
-            <div class="slide-overlay">
-              <div class="person-name">Profº Pablo</div>
-              <div class="person-role">Professor de Ed Física</div>
-              <div class="person-description">
-                A toda equipe que nos apoiou nessa jornada, fornecendo
-                estrutura, conhecimento e motivação para alcançarmos nossos
-                objetivos.
-              </div>
-            </div>
-          </li>
-          <li class="splide__slide">
-            <img src="src/img/professores/alePic.jpeg" alt="Prof Aleandro" />
-            <div class="slide-overlay">
-              <div class="person-name">Profº Aleandro</div>
-              <div class="person-role">Professor de História</div>
-              <div class="person-description">
-                A toda equipe que nos apoiou nessa jornada, fornecendo
-                estrutura, conhecimento e motivação para alcançarmos nossos
-                objetivos.
-              </div>
-            </div>
-          </li>
-          <li class="splide__slide">
-            <img src="src/img/professores/lauraPic.jpeg" alt="Prof Laura" />
-            <div class="slide-overlay">
-              <div class="person-name">Profª Laura</div>
-              <div class="person-role">Professora de Inglês</div>
-              <div class="person-description">
-                A toda equipe que nos apoiou nessa jornada, fornecendo
-                estrutura, conhecimento e motivação para alcançarmos nossos
-                objetivos.
-              </div>
-            </div>
-          </li>
-          <li class="splide__slide">
-            <img src="src/img/professores/tamyPic.jpeg" alt="Prof Tamy" />
-            <div class="slide-overlay">
-              <div class="person-name">Profª Tamy</div>
-              <div class="person-role">Professora eventual</div>
-              <div class="person-description">
-                A toda equipe que nos apoiou nessa jornada, fornecendo
-                estrutura, conhecimento e motivação para alcançarmos nossos
-                objetivos.
-              </div>
-            </div>
-          </li>
-          <li class="splide__slide">
-            <img src="src/img/professores/icaroPic.jpeg" alt="Prof Icaro" />
-            <div class="slide-overlay">
-              <div class="person-name">Profº ícaro</div>
-              <div class="person-role">Professor de artes</div>
-              <div class="person-description">
-                A toda equipe que nos apoiou nessa jornada, fornecendo
-                estrutura, conhecimento e motivação para alcançarmos nossos
-                objetivos.
-              </div>
-            </div>
-          </li>
-          <li class="splide__slide">
-            <img src="src/img/professores/nutriPic.jpeg" alt="Nutri Dani" />
-            <div class="slide-overlay">
-              <div class="person-name">Nutri Dani</div>
-              <div class="person-role">Nutricionista</div>
-              <div class="person-description">
-                A toda equipe que nos apoiou nessa jornada, fornecendo
-                estrutura, conhecimento e motivação para alcançarmos nossos
-                objetivos.
-              </div>
-            </div>
-          </li>
-          <li class="splide__slide">
-            <img src="src/img/professores/marcosPic.jpeg" alt="Prof Marcos" />
-            <div class="slide-overlay">
-              <div class="person-name">Profº Marcos</div>
-              <div class="person-role">Professor SENAI</div>
-              <div class="person-description">
-                A toda equipe que nos apoiou nessa jornada, fornecendo
-                estrutura, conhecimento e motivação para alcançarmos nossos
-                objetivos.
-              </div>
-            </div>
-          </li>
-          <li class="splide__slide">
-            <img src="src/img/professores/marceloPic.jpeg" alt="Prof Marcelo" />
-            <div class="slide-overlay">
-              <div class="person-name">Profº Marcelo</div>
-              <div class="person-role">Professor SENAI</div>
-              <div class="person-description">
-                A toda equipe que nos apoiou nessa jornada, fornecendo
-                estrutura, conhecimento e motivação para alcançarmos nossos
-                objetivos.
-              </div>
-            </div>
-          </li>
-          <li class="splide__slide">
-            <img src="src/img/professores/matheusPic.jpeg" alt="Prof Matheus" />
-            <div class="slide-overlay">
-              <div class="person-name">Profº Matheus</div>
-              <div class="person-role">Professor SENAI</div>
-              <div class="person-description">
-                A toda equipe que nos apoiou nessa jornada, fornecendo
-                estrutura, conhecimento e motivação para alcançarmos nossos
-                objetivos.
-              </div>
-            </div>
-          </li>
-          <li class="splide__slide">
-            <img src="src/img/professores/mariPic.jpeg" alt="Prof Mari" />
-            <div class="slide-overlay">
-              <div class="person-name">Profª Mari</div>
-              <div class="person-role">Psicopedagoga SENAI</div>
-              <div class="person-description">
-                A toda equipe que nos apoiou nessa jornada, fornecendo
-                estrutura, conhecimento e motivação para alcançarmos nossos
-                objetivos.
-              </div>
-            </div>
-          </li>
-          <li class="splide__slide">
-            <img src="src/img/professores/natPic.jpeg" alt="Prof Nathalia" />
-            <div class="slide-overlay">
-              <div class="person-name">Profª Nathalia</div>
-              <div class="person-role">Professora de química</div>
-              <div class="person-description">
-                A toda equipe que nos apoiou nessa jornada, fornecendo
-                estrutura, conhecimento e motivação para alcançarmos nossos
-                objetivos.
-              </div>
-            </div>
-          </li>
-
-          <li class="splide__slide">
-            <img src="src/img/professores/ricardoPic.jpeg" alt="Prof Nathalia" />
-            <div class="slide-overlay">
-              <div class="person-name">Profª Ricardo Fagnani</div>
-              <div class="person-role">Professor de Educação Física </div>
-              <div class="person-description">
-                A toda equipe que nos apoiou nessa jornada, fornecendo
-                estrutura, conhecimento e motivação para alcançarmos nossos
-                objetivos.
-              </div>
-            </div>
-          </li>
-        </ul>
-      </div>
+    <!-- Indicador de scroll -->
+    <div class="scroll-indicator" id="scrollIndicator">
+      <div>Role para baixo</div>
+      <div class="arrow">↓</div>
     </div>
-  </section>
 
-  <!-- Modal para projetos -->
-  <div id="projectModal" class="project-modal">
-    <div class="modal-content">
-      <button class="close-modal">&times;</button>
-      <div class="modal-header">
-        <h2 class="modal-title" id="modalProjectTitle">Título do Projeto</h2>
-        <p class="modal-subtitle" id="modalProjectSubtitle">
-          Subtítulo do Projeto
+    <!-- Holofotes -->
+    <div class="spotlight spotlight-1"></div>
+    <div class="spotlight spotlight-2"></div>
+
+    <!-- Seção: Descrição do projeto -->
+    <section class="section" id="projetos">
+      <div class="description-box" id="descriptionBox">
+        <p>
+          O projeto HappyEnd tem como proposta exaltar os trabalhos de conclusão
+          de curso (TCC) desenvolvidos pelos estudantes do 3º ano A e B, em
+          parceria com a equipe do SESI SENAI de Ferraz de Vasconcelos. Esses
+          projetos foram criados com o intuito de oferecer soluções práticas
+          para desafios enfrentados no dia a dia e também para problemas mais
+          amplos da sociedade.
         </p>
-        <p class="modal-members">
-          <strong>Equipe:</strong>
-          <span id="modalProjectMembers">Membros do projeto</span>
+
+        <p>
+          Mais do que apresentar ideias inovadoras, o HappyEnd busca dar
+          visibilidade aos talentos dos alunos e agradecer a todos os
+          profissionais que contribuíram ao longo dessa jornada. O nome do
+          projeto não foi escolhido por acaso — HappyEnd, que significa "final
+          feliz", traduz exatamente o sentimento de dever cumprido e celebração
+          por um ciclo que se encerra com sucesso para todas as equipes
+          envolvidas.
         </p>
       </div>
-      <div class="modal-body">
-        <div class="modal-image">
-          <img id="modalProjectImage" src="" alt="Projeto" />
+    </section>
+
+    <!-- Seção: Desenvolvedores do Site -->
+    <!-- Seção: Desenvolvedores do Site -->
+    <section class="carousel-section devs-section" id="fotos">
+      <h2 class="carousel-title">Desenvolvedores do Site</h2>
+      <p class="devs-subtitle">A equipe que deu vida ao HappyEnd</p>
+      <div class="splide" id="devsCarousel">
+        <div class="splide__track">
+          <ul class="splide__list">
+            <!-- CARD 1 -->
+            <li class="splide__slide dev-slide">
+              <div class="dev-card">
+                <div class="dev-image-container">
+                  <img
+                    src="src/img/developers/dev6.jpeg"
+                    alt="Desenvolvedor 1"
+                    onerror="this.src='src/img/placeholder.jpeg'"
+                  />
+                  <div class="dev-overlay"></div>
+                </div>
+                <div class="dev-info">
+                  <h3 class="dev-name">Mateus Alcantara</h3>
+                  <p class="dev-role">Scrum Master & Full Stack Developer</p>
+                  <p class="dev-description">
+                    Atuou como Scrum Master e desenvolveu o header, footer e as
+                    telas informativas dos professores e grupos, integrando as
+                    seções com coesão e funcionalidade.
+                  </p>
+                </div>
+              </div>
+            </li>
+
+            <!-- CARD 2 -->
+            <li class="splide__slide dev-slide">
+              <div class="dev-card">
+                <div class="dev-image-container">
+                  <img
+                    src="src/img/developers/dev5.jpeg"
+                    alt="Desenvolvedor 2"
+                    onerror="this.src='src/img/placeholder.jpeg'"
+                  />
+                  <div class="dev-overlay"></div>
+                </div>
+                <div class="dev-info">
+                  <h3 class="dev-name">Vinicius Briches</h3>
+                  <p class="dev-role">Scrum Master & Frontend Developer</p>
+                  <p class="dev-description">
+                    Liderou a equipe como Scrum Master e colaborou na criação
+                    dos cards de trabalhos, organizando o fluxo de
+                    desenvolvimento e garantindo a entrega de qualidade.
+                  </p>
+                </div>
+              </div>
+            </li>
+
+            <!-- CARD 3 -->
+            <li class="splide__slide dev-slide">
+              <div class="dev-card">
+                <div class="dev-image-container">
+                  <img
+                    src="src/img/developers/dev1.jpeg"
+                    alt="Desenvolvedor 3"
+                    onerror="this.src='src/img/placeholder.jpeg'"
+                  />
+                  <div class="dev-overlay"></div>
+                </div>
+                <div class="dev-info">
+                  <h3 class="dev-name">Karina Pagnani</h3>
+                  <p class="dev-role">Frontend Developer</p>
+                  <p class="dev-description">
+                    Implementou o carrossel dos professores, destacando cada
+                    mentor com design elegante e animações harmônicas.
+                  </p>
+                </div>
+              </div>
+            </li>
+
+            <!-- CARD 4 -->
+            <li class="splide__slide dev-slide">
+              <div class="dev-card">
+                <div class="dev-image-container">
+                  <img
+                    src="src/img/developers/dev2.jpeg"
+                    alt="Desenvolvedor 4"
+                    onerror="this.src='src/img/placeholder.jpeg'"
+                  />
+                  <div class="dev-overlay"></div>
+                </div>
+                <div class="dev-info">
+                  <h3 class="dev-name">Rafaela Matzak</h3>
+                  <p class="dev-role">Frontend Developer</p>
+                  <p class="dev-description">
+                    Desenvolveu os cards que exibem os trabalhos dos alunos,
+                    garantindo uma apresentação organizada e visualmente
+                    atrativa.
+                  </p>
+                </div>
+              </div>
+            </li>
+
+            <!-- CARD 5 -->
+            <li class="splide__slide dev-slide">
+              <div class="dev-card">
+                <div class="dev-image-container">
+                  <img
+                    src="src/img/developers/dev4.jpeg"
+                    alt="Desenvolvedor 5"
+                    onerror="this.src='src/img/placeholder.jpeg'"
+                  />
+                  <div class="dev-overlay"></div>
+                </div>
+                <div class="dev-info">
+                  <h3 class="dev-name">Victor Cavalcante</h3>
+                  <p class="dev-role">Frontend Developer</p>
+                  <p class="dev-description">
+                    Desenvolveu o carrossel interativo que apresenta os alunos
+                    desenvolvedores, com transições suaves e design dinâmico.
+                  </p>
+                </div>
+              </div>
+            </li>
+
+            <!-- CARD 6 -->
+            <li class="splide__slide dev-slide">
+              <div class="dev-card">
+                <div class="dev-image-container">
+                  <img
+                    src="src/img/developers/dev3.jpeg"
+                    alt="Desenvolvedor 6"
+                    onerror="this.src='src/img/placeholder.jpeg'"
+                  />
+                  <div class="dev-overlay"></div>
+                </div>
+                <div class="dev-info">
+                  <h3 class="dev-name">Vitor Vasconcelos</h3>
+                  <p class="dev-role">Desenvolvedor Frontend</p>
+                  <p class="dev-description">
+                    Responsável pela criação da animação de entrada triunfal do
+                    site, garantindo uma introdução visual impactante e
+                    envolvente.
+                  </p>
+                </div>
+              </div>
+            </li>
+          </ul>
         </div>
-        <div class="modal-details">
-          <div class="detail-section">
-            <h3>Descrição</h3>
-            <p id="modalProjectDescription">Descrição do projeto...</p>
-          </div>
-          <div class="detail-section">
-            <h3>Problema</h3>
-            <p id="modalProjectProblem">
-              Problema que o projeto busca resolver...
-            </p>
-          </div>
-          <div class="detail-section">
-            <h3>Solução</h3>
-            <p id="modalProjectSolution">Solução proposta pelo projeto...</p>
-          </div>
-          <div class="detail-section">
-            <h3>Resultados</h3>
-            <p id="modalProjectResults">Resultados alcançados...</p>
+      </div>
+    </section>
+
+    <!-- Seção: Projetos TCC -->
+    <section class="section" id="projetos-tcc">
+      <div class="projects-container">
+        <!-- Título -->
+        <div class="vertical-title">
+          <span>NOSSOS</span>
+          <span>PROJETOS</span>
+        </div>
+
+        <!-- Conteúdo dos projetos -->
+        <div class="projects-content">
+          <!-- Carrossel de projetos -->
+          <div class="splide" id="projectsCarousel">
+            <div class="splide__track">
+              <ul class="splide__list" id="projectsCarouselList">
+                <!-- Os projetos serão inseridos dinamicamente via JavaScript -->
+              </ul>
+            </div>
           </div>
         </div>
       </div>
-      <div class="modal-footer">
-        <div class="modal-tags" id="modalProjectTags">
-          <!-- Tags serão inseridas aqui -->
+    </section>
+
+    <!-- Carrossel de homenagens -->
+    <section class="carousel-section" id="agradecimentos">
+      <h2 class="carousel-title">Queridos docentes</h2>
+      <p class="thanks-message">
+        Agradecemos de coração a todos os professores que fizeram parte da nossa
+        formação. Vocês foram fundamentais nessa jornada, nos inspirando,
+        desafiando e nos preparando para os próximos passos. Cada ensinamento,
+        cada palavra de incentivo e cada momento compartilhado contribuiu para
+        que chegássemos até aqui. Esta é nossa singela homenagem a quem dedica a
+        vida a transformar o futuro através da educação.
+      </p>
+      <div class="splide" id="imageCarousel">
+        <div class="splide__track">
+          <ul class="splide__list">
+            <li class="splide__slide">
+              <img src="src/img/professores/susiPic.jpeg" alt="Prof Susi" />
+              <div class="slide-overlay">
+                <div class="person-name">Profª Susi - Português</div>
+                <div class="person-description">
+                  Obrigado por desvendar os segredos da redação e da gramática
+                  com tanta dedicação. Sua paixão pela língua portuguesa nos
+                  ensinou a escrever e nos expressar com clareza.
+                </div>
+              </div>
+            </li>
+
+            <li class="splide__slide">
+              <img
+                src="src/img/professores/willianPic.jpeg"
+                alt="Prof William"
+              />
+              <div class="slide-overlay">
+                <div class="person-name">Profº William - Matemática</div>
+                <div class="person-description">
+                  Gratidão ao rei da geometria por transformar formas e ângulos
+                  em conhecimento aplicável. Seus ensinamentos matemáticos foram
+                  fundamentais para nossos projetos.
+                </div>
+              </div>
+            </li>
+
+            <li class="splide__slide">
+              <img src="src/img/professores/kelliPic.jpeg" alt="Prof Kelli" />
+              <div class="slide-overlay">
+                <div class="person-name">Profª Kelli - Biologia</div>
+                <div class="person-description">
+                  Obrigado por nos fazer apaixonar pelo mundo microscópico! Seu
+                  amor pelas bactérias e pela vida nos mostrou a beleza
+                  escondida nos menores seres vivos.
+                </div>
+              </div>
+            </li>
+
+            <li class="splide__slide">
+              <img src="src/img/professores/geoPic.jpeg" alt="Prof Geo" />
+              <div class="slide-overlay">
+                <div class="person-name">Profª Geo - Geografia</div>
+                <div class="person-description">
+                  Gratidão por expandir nossos horizontes e nos conectar com o
+                  mundo. Suas aulas nos fizeram compreender o espaço, as
+                  culturas e as transformações do nosso planeta.
+                </div>
+              </div>
+            </li>
+
+            <li class="splide__slide">
+              <img src="src/img/professores/pabloPic.jpeg" alt="Prof Pablo" />
+              <div class="slide-overlay">
+                <div class="person-name">Profº Pablo - Educação Física</div>
+                <div class="person-description">
+                  Obrigado por nos inspirar com sua energia e amor pela corrida!
+                  Suas aulas nos ensinaram que movimento é vida e que
+                  persistência leva ao sucesso.
+                </div>
+              </div>
+            </li>
+
+            <li class="splide__slide">
+              <img src="src/img/professores/alePic.jpeg" alt="Prof Aleandro" />
+              <div class="slide-overlay">
+                <div class="person-name">Profº Aleandro - História</div>
+                <div class="person-description">
+                  Gratidão por nos fazer viajar no tempo e compreender o
+                  passado. Suas aulas mostraram que a história vive em cada um
+                  de nós e molda nosso presente.
+                </div>
+              </div>
+            </li>
+
+            <li class="splide__slide">
+              <img src="src/img/professores/lauraPic.jpeg" alt="Prof Laura" />
+              <div class="slide-overlay">
+                <div class="person-name">Profª Laura - Inglês</div>
+                <div class="person-description">
+                  Obrigado por abrir as portas do mundo através do idioma. Suas
+                  aulas nos deram confiança para nos comunicar e explorar novas
+                  oportunidades globais.
+                </div>
+              </div>
+            </li>
+
+            <li class="splide__slide">
+              <img src="src/img/professores/tamyPic.jpeg" alt="Prof Tamy" />
+              <div class="slide-overlay">
+                <div class="person-name">Profª Tamy</div>
+                <div class="person-description">
+                  Gratidão por sua gentileza e disponibilidade em nos ajudar
+                  sempre que precisamos. Seu carinho e atenção fizeram toda a
+                  diferença em nossa jornada.
+                </div>
+              </div>
+            </li>
+
+            <li class="splide__slide">
+              <img src="src/img/professores/icaroPic.jpeg" alt="Prof Icaro" />
+              <div class="slide-overlay">
+                <div class="person-name">Profº Ícaro - Artes</div>
+                <div class="person-description">
+                  Obrigado por nos mostrar que arte vai muito além de quadros!
+                  Suas aulas nos ensinaram a expressar criatividade em todas as
+                  formas e manifestações artísticas.
+                </div>
+              </div>
+            </li>
+
+            <li class="splide__slide">
+              <img src="src/img/professores/nutriPic.jpeg" alt="Nutri Dani" />
+              <div class="slide-overlay">
+                <div class="person-name">Nutri Dani - Nutrição</div>
+                <div class="person-description">
+                  Gratidão por cuidar da nossa saúde com tanto carinho. Seus
+                  conselhos sobre alimentação equilibrada nos deram energia e
+                  disposição para enfrentar os desafios.
+                </div>
+              </div>
+            </li>
+
+            <li class="splide__slide">
+              <img src="src/img/professores/marcosPic.jpeg" alt="Prof Marcos" />
+              <div class="slide-overlay">
+                <div class="person-name">Profº Marcos - SENAI</div>
+                <div class="person-description">
+                  Obrigado por nos guiar no curso técnico de Desenvolvimento de
+                  Sistemas. Seus ensinamentos práticos foram a base para
+                  construirmos nossa carreira na tecnologia.
+                </div>
+              </div>
+            </li>
+
+            <li class="splide__slide">
+              <img
+                src="src/img/professores/marceloPic.jpeg"
+                alt="Prof Marcelo"
+              />
+              <div class="slide-overlay">
+                <div class="person-name">Profº Marcelo - SENAI</div>
+                <div class="person-description">
+                  Gratidão ao rei do PHP por nos ensinar programação com
+                  maestria! Suas aulas de desenvolvimento web foram essenciais
+                  para criarmos nossos projetos.
+                </div>
+              </div>
+            </li>
+
+            <li class="splide__slide">
+              <img
+                src="src/img/professores/matheusPic.jpeg"
+                alt="Prof Matheus"
+              />
+              <div class="slide-overlay">
+                <div class="person-name">Profº Matheus - SENAI</div>
+                <div class="person-description">
+                  Obrigado por nos introduzir ao fascinante mundo dos dados!
+                  Seus ensinamentos sobre banco de dados e análise foram
+                  fundamentais para nossos TCCs.
+                </div>
+              </div>
+            </li>
+
+            <li class="splide__slide">
+              <img src="src/img/professores/mariPic.jpeg" alt="Prof Mari" />
+              <div class="slide-overlay">
+                <div class="person-name">Profª Mari - SENAI</div>
+                <div class="person-description">
+                  Gratidão por nos apoiar não só tecnicamente, mas
+                  emocionalmente. Como psicopedagoga, você nos ajudou a superar
+                  desafios e acreditar no nosso potencial.
+                </div>
+              </div>
+            </li>
+
+            <li class="splide__slide">
+              <img src="src/img/professores/natPic.jpeg" alt="Prof Nathalia" />
+              <div class="slide-overlay">
+                <div class="person-name">Profª Nathalia - Química</div>
+                <div class="person-description">
+                  Obrigado por tornar a química orgânica inesquecível com suas
+                  músicas! Suas aulas criativas transformaram fórmulas complexas
+                  em melodias que nunca esqueceremos.
+                </div>
+              </div>
+            </li>
+
+            <li class="splide__slide">
+              <img
+                src="src/img/professores/ricardoPic.jpeg"
+                alt="Prof Ricardo"
+              />
+              <div class="slide-overlay">
+                <div class="person-name">Prof Ricardo - Educação Física</div>
+                <div class="person-description">
+                  Gratidão ao nosso campeão dos campeões! Obrigado por nos
+                  ensinar que determinação e esforço nos levam à vitória, dentro
+                  e fora das quadras.
+                </div>
+              </div>
+            </li>
+          </ul>
         </div>
-        <button class="modal-back-btn">Voltar para Projetos</button>
+      </div>
+    </section>
+
+    <!-- Modal para projetos -->
+    <div id="projectModal" class="project-modal">
+      <div class="modal-content">
+        <button class="close-modal">&times;</button>
+        <div class="modal-header">
+          <h2 class="modal-title" id="modalProjectTitle">Título do Projeto</h2>
+          <p class="modal-subtitle" id="modalProjectSubtitle">
+            Subtítulo do Projeto
+          </p>
+          <p class="modal-members">
+            <strong>Equipe:</strong>
+            <span id="modalProjectMembers">Membros do projeto</span>
+          </p>
+        </div>
+        <div class="modal-body">
+          <div class="modal-image">
+            <img id="modalProjectImage" src="" alt="Projeto" />
+          </div>
+          <div class="modal-details">
+            <div class="detail-section">
+              <h3>Descrição</h3>
+              <p id="modalProjectDescription">Descrição do projeto...</p>
+            </div>
+            <div class="detail-section">
+              <h3>Problema</h3>
+              <p id="modalProjectProblem">
+                Problema que o projeto busca resolver...
+              </p>
+            </div>
+            <div class="detail-section">
+              <h3>Solução</h3>
+              <p id="modalProjectSolution">Solução proposta pelo projeto...</p>
+            </div>
+            <div class="detail-section">
+              <h3>Resultados</h3>
+              <p id="modalProjectResults">Resultados alcançados...</p>
+            </div>
+          </div>
+        </div>
+        <div class="modal-footer">
+          <div class="modal-tags" id="modalProjectTags">
+            <!-- Tags serão inseridas aqui -->
+          </div>
+          <button class="modal-back-btn">Voltar para Projetos</button>
+        </div>
       </div>
     </div>
-  </div>
 
-  <!-- Scripts -->
-  <script src="https://cdn.jsdelivr.net/npm/@splidejs/splide@4.1.4/dist/js/splide.min.js"></script>
-  <script src="script.js"></script>
-</body>
+    <!-- Footer -->
+    <footer class="site-footer">
+      <div class="footer-content">
+        <p class="footer-text">HappyEnd</p>
+        <p class="footer-year">© 2025 - Todos os direitos reservados</p>
+      </div>
+    </footer>
 
+    <!-- Scripts -->
+    <script src="https://cdn.jsdelivr.net/npm/@splidejs/splide@4.1.4/dist/js/splide.min.js"></script>
+    <script src="script.js"></script>
+  </body>
 </html>

@@ -1,8 +1,9 @@
-// Estado da cortina
+// ===== CONFIGURAÇÕES E ESTADO =====
 let curtainOpened = false;
 
-// Dados dos projetos TCC ATUALIZADOS (12 projetos) - EMBARALHADOS
-const projectsData = [{
+// ===== DADOS DOS PROJETOS =====
+const projectsData = [
+  {
     id: 1,
     title: "Conecta Libras",
     subtitle: "Comunicação em tempo real para deficientes auditivos",
@@ -13,6 +14,7 @@ const projectsData = [{
     solution: "Sistema integrado mobile, web e IoT com reconhecimento de voz, avatar 3D para Libras e transcrição em tempo real.",
     results: "Solução completa de acessibilidade comunicacional que promove inclusão social em diferentes contextos.",
     tags: ["Libras", "Acessibilidade", "IoT", "Comunicação"],
+    website: "#"
   },
   {
     id: 2,
@@ -25,6 +27,7 @@ const projectsData = [{
     solution: "Integração de app com dispositivo IoT onde crianças escaneiam cartas físicas com personagens inclusivos para acessar minigames educativos.",
     results: "Sistema com 3 personagens inclusivos e 15 minigames educativos, proporcionando experiência interativa, acessível e inclusiva.",
     tags: ["Educação Inclusiva", "Realidade Aumentada", "IoT", "Gamificação"],
+    website: "#"
   },
   {
     id: 3,
@@ -37,6 +40,7 @@ const projectsData = [{
     solution: "Acessório IoT independente que se prende à garrafa e alerta visual/sonoramente nos horários programados.",
     results: "Solução prática que promove autonomia e saúde sem depender do uso de celulares em ambientes escolares.",
     tags: ["Saúde", "IoT", "Autonomia", "Neurodivergência"],
+    website: "#"
   },
   {
     id: 4,
@@ -49,6 +53,7 @@ const projectsData = [{
     solution: "Tabuleiro físico com IoT que propõe desafios, combinado com site e app que acompanham o progresso e auxiliam no aprendizado.",
     results: "Sistema completo que torna o aprendizado de inglês divertido e interativo para crianças através da gamificação e tecnologia.",
     tags: ["Inglês", "Gamificação", "Educação Infantil", "IoT"],
+    website: "#"
   },
   {
     id: 5,
@@ -61,6 +66,7 @@ const projectsData = [{
     solution: "Desenvolvimento de uma plataforma completa com cursos para adultos e área kids gamificada, oferecendo ensino de LIBRAS de forma acessível, interativa e gratuita.",
     results: "Plataforma com metodologia prática e interativa para adultos e interface lúdica para crianças, promovendo o primeiro contato com LIBRAS de forma natural e divertida.",
     tags: ["LIBRAS", "Inclusão", "Educação", "Acessibilidade"],
+    website: "#"
   },
   {
     id: 6,
@@ -73,6 +79,7 @@ const projectsData = [{
     solution: "Sistema com botões físicos IoT que enviam comandos para app mobile reproduzir áudios correspondentes.",
     results: "Ferramenta de comunicação alternativa que promove autonomia e inclusão social para crianças não-verbais.",
     tags: ["Comunicação", "IoT", "Inclusão", "Educação Especial"],
+    website: "#"
   },
   {
     id: 7,
@@ -85,6 +92,7 @@ const projectsData = [{
     solution: "Sistema que utiliza IoT e inteligência artificial para identificar valores de cédulas e registrar transações em um aplicativo acessível.",
     results: "Dispositivo funcional que garante segurança, praticidade e independência no manuseio do dinheiro para pessoas com deficiência visual.",
     tags: ["Acessibilidade", "Tecnologia Assistiva", "IoT", "Inclusão"],
+    website: "#"
   },
   {
     id: 8,
@@ -97,6 +105,7 @@ const projectsData = [{
     solution: "App mobile com IA para organização e sugestões de outfits, combinado com sensores IoT para identificação de peças físicas.",
     results: "Sistema que oferece praticidade, autonomia e acessibilidade no vestir-se no dia a dia.",
     tags: ["Moda", "IA", "Acessibilidade", "IoT"],
+    website: "#"
   },
   {
     id: 9,
@@ -109,6 +118,7 @@ const projectsData = [{
     solution: "Combinação de app mobile, web e IoT com painel físico interativo que conecta desenho físico ao digital em tempo real.",
     results: "Espaço lúdico e inclusivo que promove expressão artística e convívio social através da integração entre físico e digital.",
     tags: ["Arte", "Inclusão", "Criatividade", "IoT"],
+    website: "#"
   },
   {
     id: 10,
@@ -121,6 +131,7 @@ const projectsData = [{
     solution: "Sensor IoT que monitora ruído e envia histórico via app, combinado com site educativo sobre TEA com jogos interativos e conteúdos calmantes.",
     results: "Sistema de monitoramento de ruído funcional e site educativo que promove maior compreensão sobre TEA e oferece recursos para relaxamento.",
     tags: ["TEA", "IoT", "Inclusão", "Educação"],
+    website: "#"
   },
   {
     id: 11,
@@ -133,6 +144,7 @@ const projectsData = [{
     solution: "Dispositivo físico interativo com feedback imediato, conectado a plataforma web com acompanhamento em tempo real.",
     results: "Experiência de aprendizado divertida e envolvente com participação ativa dos pais no progresso das crianças.",
     tags: ["Educação", "Gamificação", "IoT", "Família"],
+    website: "#"
   },
   {
     id: 12,
@@ -145,12 +157,12 @@ const projectsData = [{
     solution: "Dispositivos IoT para monitorar ruído, exibir cardápios e avisos, com app para gestão pela nutricionista.",
     results: "Ambiente mais organizado, consciente e acolhedor no refeitório escolar com comunicação eficiente.",
     tags: ["Educação", "IoT", "Sustentabilidade", "Comunicação"],
+    website: "#"
   }
 ];
 
-// Scroll para controle da cortina
-window.addEventListener("scroll", function () {
-  const scrolled = window.pageYOffset;
+// ===== ANIMAÇÃO DA CORTINA =====
+function handleCurtainAnimation() {
   const curtainContainer = document.getElementById("curtainContainer");
   const curtainLeft = document.getElementById("curtainLeft");
   const curtainRight = document.getElementById("curtainRight");
@@ -160,323 +172,84 @@ window.addEventListener("scroll", function () {
 
   if (!curtainContainer || !curtainLeft || !curtainRight) return;
 
-  // Calcula o progresso do scroll (0 a 1)
-  const maxScroll = 500;
-  const progress = Math.min(scrolled / maxScroll, 1);
+  window.addEventListener("scroll", function () {
+    const scrolled = window.pageYOffset;
+    const maxScroll = 500;
+    const progress = Math.min(scrolled / maxScroll, 1);
 
-  if (progress > 0 && !curtainOpened) {
-    const translateX = progress * 100;
+    if (progress > 0 && !curtainOpened) {
+      const translateX = progress * 100;
 
-    // Move as cortinas para as laterais
-    curtainLeft.style.transform = `translateX(-${translateX}%)`;
-    curtainRight.style.transform = `translateX(${translateX}%)`;
+      curtainLeft.style.transform = `translateX(-${translateX}%)`;
+      curtainRight.style.transform = `translateX(${translateX}%)`;
 
-    if (curtainTop) {
-      curtainTop.style.transform = `translateY(-${translateX}%)`;
-    }
+      if (curtainTop) {
+        curtainTop.style.transform = `translateY(-${translateX}%)`;
+      }
 
-    // Fade do texto da cortina
-    if (curtainText) {
-      curtainText.style.opacity = `${1 - progress}`;
-      curtainText.style.transform = `translate(-50%, -50%) scale(${1 - progress * 0.3
-        })`;
-    }
+      if (curtainText) {
+        curtainText.style.opacity = `${1 - progress}`;
+        curtainText.style.transform = `translate(-50%, -50%) scale(${1 - progress * 0.3})`;
+      }
 
-    // Esconde o indicador de scroll
-    if (scrollIndicator) {
-      scrollIndicator.style.opacity = `${Math.max(0, 1 - progress * 2)}`;
-    }
+      if (scrollIndicator) {
+        scrollIndicator.style.opacity = `${Math.max(0, 1 - progress * 2)}`;
+      }
 
-    // Remove completamente quando totalmente aberta
-    if (progress >= 0.98) {
-      curtainOpened = true;
-      setTimeout(() => {
-        curtainContainer.style.display = "none";
-        if (scrollIndicator) {
-          scrollIndicator.style.display = "none";
-        }
-        // Força o scroll para o topo após a cortina desaparecer
-        window.scrollTo({
-          top: 0,
-          behavior: "smooth"
-        });
-      }, 500);
-    }
-  }
-});
-
-// Força scroll para o topo no carregamento
-window.addEventListener("load", function () {
-  window.scrollTo(0, 0);
-  setTimeout(() => {
-    document.body.style.opacity = "1";
-  }, 100);
-});
-
-// Menu mobile
-const mobileMenuBtn = document.getElementById("mobileMenuBtn");
-const navMenu = document.getElementById("navMenu");
-
-if (mobileMenuBtn && navMenu) {
-  mobileMenuBtn.addEventListener("click", function () {
-    navMenu.classList.toggle("active");
-
-    // Animação do botão
-    if (navMenu.classList.contains("active")) {
-      mobileMenuBtn.innerHTML = "✕";
-    } else {
-      mobileMenuBtn.innerHTML = "☰";
-    }
-  });
-}
-
-// Smooth scroll para navegação
-document.querySelectorAll(".nav-link").forEach((link) => {
-  link.addEventListener("click", function (e) {
-    e.preventDefault();
-
-    // Remove active de todos
-    document
-      .querySelectorAll(".nav-link")
-      .forEach((l) => l.classList.remove("active"));
-
-    // Adiciona active no clicado
-    this.classList.add("active");
-
-    // Fecha menu mobile se estiver aberto
-    if (navMenu && navMenu.classList.contains("active")) {
-      navMenu.classList.remove("active");
-      if (mobileMenuBtn) {
-        mobileMenuBtn.innerHTML = "☰";
+      if (progress >= 0.98) {
+        curtainOpened = true;
+        setTimeout(() => {
+          curtainContainer.style.display = "none";
+          if (scrollIndicator) scrollIndicator.style.display = "none";
+          window.scrollTo({ top: 0, behavior: "smooth" });
+        }, 500);
       }
     }
-
-    // Scroll suave
-    const targetId = this.getAttribute("href");
-    const targetSection = document.querySelector(targetId);
-
-    if (targetSection) {
-      const offset = 80; // Altura do navbar
-      const targetPosition = targetSection.offsetTop - offset;
-
-      window.scrollTo({
-        top: targetPosition,
-        behavior: "smooth",
-      });
-    }
-  });
-});
-
-// Criar partículas de fundo
-function createParticles() {
-  const particlesContainer = document.getElementById("particles");
-  if (!particlesContainer) return;
-
-  // Limpa partículas existentes
-  particlesContainer.innerHTML = "";
-
-  const particleCount = window.innerWidth < 768 ? 30 : 60;
-
-  for (let i = 0; i < particleCount; i++) {
-    const particle = document.createElement("div");
-    particle.className = "particle";
-
-    particle.style.left = Math.random() * 100 + "%";
-    particle.style.top = Math.random() * 100 + "%";
-    particle.style.animationDelay = Math.random() * 20 + "s";
-    particle.style.animationDuration = Math.random() * 10 + 10 + "s";
-    particle.style.opacity = Math.random() * 0.6 + 0.4;
-
-    particlesContainer.appendChild(particle);
-  }
-}
-
-// Criar partículas especiais (douradas)
-function createSpecialParticles() {
-  const particlesContainer = document.getElementById("particles");
-  if (!particlesContainer) return;
-
-  const specialCount = window.innerWidth < 768 ? 8 : 15;
-
-  for (let i = 0; i < specialCount; i++) {
-    const particle = document.createElement("div");
-    particle.className = "particle special-particle";
-
-    particle.style.left = Math.random() * 100 + "%";
-    particle.style.top = Math.random() * 100 + "%";
-    particle.style.animationDelay = Math.random() * 10 + "s";
-    particle.style.animationDuration = Math.random() * 6 + 4 + "s";
-
-    const size = Math.random() * 2 + 3;
-    particle.style.width = size + "px";
-    particle.style.height = size + "px";
-    particle.style.background = "#ffed4e";
-    particle.style.boxShadow = "0 0 6px #ffd700, 0 0 12px #ffd700";
-
-    particlesContainer.appendChild(particle);
-  }
-}
-
-// Animações de scroll com Intersection Observer
-function handleScrollAnimations() {
-  const elementsToAnimate = [
-    document.getElementById("introText"),
-    document.getElementById("descriptionBox"),
-  ];
-
-  const observer = new IntersectionObserver(
-    (entries) => {
-      entries.forEach((entry) => {
-        if (entry.isIntersecting) {
-          entry.target.classList.add("visible");
-        }
-      });
-    }, {
-      threshold: 0.3,
-      rootMargin: "0px 0px -100px 0px",
-    }
-  );
-
-  elementsToAnimate.forEach((element) => {
-    if (element) observer.observe(element);
   });
 }
 
-// Partículas seguindo o cursor (desktop apenas)
-function createCursorTrail() {
-  if (window.innerWidth < 768 || isTouchDevice()) return;
+// ===== NAVEGAÇÃO =====
+function initNavigation() {
+  const mobileMenuBtn = document.getElementById("mobileMenuBtn");
+  const navMenu = document.getElementById("navMenu");
 
-  document.addEventListener("mousemove", (e) => {
-    if (Math.random() < 0.3) {
-      createTrailParticle(e.clientX, e.clientY);
-    }
-  });
-
-  function createTrailParticle(x, y) {
-    const particle = document.createElement("div");
-    particle.className = "trail-particle";
-    particle.style.position = "fixed";
-    particle.style.left = x + "px";
-    particle.style.top = y + "px";
-    particle.style.width = "2px";
-    particle.style.height = "2px";
-    particle.style.background = "#ffd700";
-    particle.style.borderRadius = "50%";
-    particle.style.pointerEvents = "none";
-    particle.style.zIndex = "3";
-    particle.style.opacity = "1";
-    particle.style.transition = "all 1.5s ease-out";
-
-    document.body.appendChild(particle);
-
-    requestAnimationFrame(() => {
-      particle.style.opacity = "0";
-      particle.style.transform =
-        "translate(" +
-        (Math.random() - 0.5) * 100 +
-        "px, " +
-        (Math.random() - 0.5) * 100 +
-        "px) scale(0)";
+  // Menu mobile toggle
+  if (mobileMenuBtn && navMenu) {
+    mobileMenuBtn.addEventListener("click", () => {
+      navMenu.classList.toggle("active");
+      mobileMenuBtn.innerHTML = navMenu.classList.contains("active") ? "✕" : "☰";
     });
-
-    setTimeout(() => {
-      if (particle.parentNode) {
-        particle.parentNode.removeChild(particle);
-      }
-    }, 1500);
   }
-}
 
-// Verifica se é dispositivo touch
-function isTouchDevice() {
-  return (
-    "ontouchstart" in window ||
-    navigator.maxTouchPoints > 0 ||
-    navigator.msMaxTouchPoints > 0
-  );
-}
+  // Smooth scroll e active state
+  document.querySelectorAll(".nav-link").forEach((link) => {
+    link.addEventListener("click", function (e) {
+      e.preventDefault();
 
-// Verifica preferência de movimento reduzido
-function supportsReducedMotion() {
-  return (
-    window.matchMedia &&
-    window.matchMedia("(prefers-reduced-motion: reduce)").matches
-  );
-}
+      // Update active state
+      document.querySelectorAll(".nav-link").forEach((l) => l.classList.remove("active"));
+      this.classList.add("active");
 
-// Gerencia movimento reduzido
-function handleReducedMotion() {
-  if (supportsReducedMotion()) {
-    document.body.classList.add("reduced-motion");
-    const style = document.createElement("style");
-    style.textContent = `
-      .reduced-motion * {
-        animation-duration: 0.01ms !important;
-        animation-iteration-count: 1 !important;
-        transition-duration: 0.01ms !important;
+      // Close mobile menu
+      if (navMenu?.classList.contains("active")) {
+        navMenu.classList.remove("active");
+        if (mobileMenuBtn) mobileMenuBtn.innerHTML = "☰";
       }
-      .reduced-motion .particle {
-        display: none;
+
+      // Smooth scroll
+      const targetId = this.getAttribute("href");
+      const targetSection = document.querySelector(targetId);
+
+      if (targetSection) {
+        const offset = 80;
+        const targetPosition = targetSection.offsetTop - offset;
+        window.scrollTo({ top: targetPosition, behavior: "smooth" });
       }
-    `;
-    document.head.appendChild(style);
-  }
+    });
+  });
 }
 
-// Gerencia redimensionamento da janela
-function handleResize() {
-  createParticles();
-  createSpecialParticles();
-}
-
-
-function initCarousel() {
-  const carouselElement = document.getElementById("imageCarousel");
-  if (!carouselElement) return;
-
-  try {
-    new Splide("#imageCarousel", {
-      type: "loop",
-      perPage: 3,
-      focus: "center",
-      gap: "1.5rem",
-      pagination: true,
-      arrows: true,
-      autoplay: true,
-      interval: 5000,
-      pauseOnHover: true,
-      pauseOnFocus: true,
-      speed: 800,
-      easing: "cubic-bezier(0.4, 0, 0.2, 1)",
-      // Configurações simplificadas para as bolinhas
-      paginationKeyboard: true,
-      breakpoints: {
-        1200: {
-          perPage: 3,
-          gap: "1.2rem",
-        },
-        1024: {
-          perPage: 2,
-          gap: "1rem",
-        },
-        768: {
-          perPage: 1,
-          gap: "0.8rem",
-        },
-        480: {
-          perPage: 1,
-          gap: "0.5rem",
-        }
-      },
-    }).mount();
-    
-    console.log("Carrossel de professores inicializado com sucesso");
-  } catch (error) {
-    console.error("Erro ao inicializar carrossel:", error);
-  }
-}
-
-// Navegação ativa baseada no scroll
+// ===== NAVEGAÇÃO ATIVA POR SCROLL =====
 function handleActiveNav() {
   const sections = document.querySelectorAll("section[id], main[id]");
   const navLinks = document.querySelectorAll(".nav-link");
@@ -488,8 +261,6 @@ function handleActiveNav() {
 
     sections.forEach((section) => {
       const sectionTop = section.offsetTop;
-      const sectionHeight = section.clientHeight;
-
       if (window.pageYOffset >= sectionTop - 200) {
         current = section.getAttribute("id");
       }
@@ -504,112 +275,174 @@ function handleActiveNav() {
   });
 }
 
-// Parallax suave no scroll
-function handleParallax() {
-  const logo = document.querySelector(".main-content .logo");
-  const introText = document.querySelector(".intro-text");
+// ===== CARROSSEL DE PROFESSORES =====
+function initTeachersCarousel() {
+  const carouselElement = document.getElementById("imageCarousel");
+  if (!carouselElement) return;
 
-  window.addEventListener("scroll", () => {
-    const scrolled = window.pageYOffset;
+  if (typeof Splide === 'undefined') {
+    setTimeout(initTeachersCarousel, 200);
+    return;
+  }
 
-    if (logo) {
-      logo.style.transform = `translateY(${scrolled * 0.5}px)`;
-    }
-
-    if (introText) {
-      introText.style.transform = `translateY(${scrolled * 0.3}px)`;
-    }
-  });
+  try {
+    new Splide("#imageCarousel", {
+      type: "loop",
+      perPage: 3,
+      focus: "center",
+      gap: "1.5rem",
+      pagination: true,
+      arrows: true,
+      autoplay: true,
+      interval: 5000,
+      pauseOnHover: true,
+      speed: 800,
+      breakpoints: {
+        1200: { perPage: 3, gap: "1.2rem" },
+        1024: { perPage: 2, gap: "1rem" },
+        768: { perPage: 1, gap: "0.8rem" },
+        480: { perPage: 1, gap: "0.5rem" }
+      },
+    }).mount();
+  } catch (error) {
+    console.error("Erro ao inicializar carrossel de professores:", error);
+  }
 }
 
-// Função para criar a grade de projetos (Desktop)
+// ===== CARROSSEL DE DESENVOLVEDORES =====
+function initDevsCarousel() {
+  const devsCarouselElement = document.getElementById("devsCarousel");
+  if (!devsCarouselElement) return;
+
+  if (typeof Splide === 'undefined') {
+    setTimeout(initDevsCarousel, 200);
+    return;
+  }
+
+  try {
+    new Splide("#devsCarousel", {
+      type: "slide",
+      perPage: 3,
+      perMove: 1,
+      gap: "1.5rem",
+      pagination: true,
+      arrows: true,
+      autoplay: false,
+      speed: 500,
+      rewind: true,
+      breakpoints: {
+        1200: { perPage: 2, gap: "1rem" },
+        768: { perPage: 1, gap: "0.5rem" },
+      },
+    }).mount();
+  } catch (error) {
+    console.error("Erro ao inicializar carrossel de devs:", error);
+  }
+}
+
+// ===== GRADE DE PROJETOS (NÃO USADO - AGORA É CARROSSEL) =====
 function createProjectsGrid() {
-  const projectsGrid = document.getElementById("projectsGrid");
-  if (!projectsGrid) return;
+  // Função mantida para compatibilidade mas não utilizada
+  // Projetos agora são exibidos apenas em carrossel
+  return;
+}
 
-  projectsGrid.innerHTML = "";
+// ===== CARROSSEL DE PROJETOS =====
+function createProjectsCarousel() {
+  const carouselList = document.getElementById("projectsCarouselList");
+  if (!carouselList) {
+    console.error("❌ projectsCarouselList não encontrado!");
+    return;
+  }
 
-  projectsData.forEach((project) => {
-    const projectCard = document.createElement("div");
-    projectCard.className = "project-card";
-    projectCard.setAttribute("data-project-id", project.id);
+  console.log("🚀 Criando carrossel de projetos...");
+  carouselList.innerHTML = "";
 
-    projectCard.innerHTML = `
-      <div class="project-image">
-        <img src="${project.image}" alt="${project.title}" onerror="this.src='src/img/placeholder.jpeg'">
-        <div class="project-overlay">
-          <div class="project-number">${project.id}</div>
-          <div class="project-title">${project.title}</div>
-          <div class="project-subtitle">${project.subtitle}</div>
-          <div class="project-view-text">Ver Projeto</div>
+  projectsData.forEach((project, index) => {
+    console.log(`➕ Adicionando projeto ${index + 1}: ${project.title}`);
+    
+    const slide = document.createElement("li");
+    slide.className = "splide__slide";
+
+    slide.innerHTML = `
+      <div class="project-card">
+        <div class="project-image-container">
+          <img src="${project.image}" 
+               alt="${project.title}" 
+               class="project-image"
+               onerror="this.src='src/img/placeholder.jpeg'">
+        </div>
+        <div class="project-info">
+          <h3 class="project-title">${project.title}</h3>
+          <p class="project-subtitle">${project.subtitle}</p>
+          <p class="project-members">${project.members}</p>
+          <div class="project-actions">
+            <a href="${project.website}" class="project-link">Visite o Site</a>
+            <button class="project-details-btn" onclick="window.openProjectModal(${project.id})">Ver Detalhes</button>
+          </div>
         </div>
       </div>
     `;
 
-    projectCard.addEventListener("click", () => openProjectModal(project.id));
-    projectsGrid.appendChild(projectCard);
-  });
-}
-
-// Função para criar o carrossel de projetos (Mobile)
-function createProjectsCarousel() {
-  const carouselList = document.getElementById("projectsCarouselList");
-  if (!carouselList) return;
-
-  carouselList.innerHTML = "";
-
-  projectsData.forEach((project) => {
-    const slide = document.createElement("li");
-    slide.className = "splide__slide";
-    slide.setAttribute("data-project-id", project.id);
-
-    slide.innerHTML = `
-      <img src="${project.image}" alt="${project.title}" onerror="this.src='src/img/placeholder.jpeg'">
-      <div class="slide-project-overlay">
-        <div class="project-number">${project.id}</div>
-        <div class="project-title">${project.title}</div>
-        <div class="project-subtitle">${project.subtitle}</div>
-        <div class="project-view-text">Toque para ver detalhes</div>
-      </div>
-    `;
-
-    slide.addEventListener("click", () => openProjectModal(project.id));
     carouselList.appendChild(slide);
   });
 
-  // Inicializar carrossel de projetos apenas se existir
-  initProjectsCarousel();
+  console.log(`✅ ${projectsData.length} projetos adicionados!`);
+  
+  setTimeout(() => {
+    initProjectsCarousel();
+  }, 100);
 }
 
-// Inicializa o carrossel de projetos
+// ===== INICIALIZAR CARROSSEL DE PROJETOS =====
 function initProjectsCarousel() {
   const carouselElement = document.getElementById("projectsCarousel");
-  if (!carouselElement) return;
+  
+  if (!carouselElement) {
+    console.error("❌ Elemento projectsCarousel não encontrado!");
+    return;
+  }
+
+  console.log("✅ Elemento projectsCarousel encontrado");
+
+  if (typeof Splide === 'undefined') {
+    console.warn("⏳ Splide ainda não carregado, tentando novamente...");
+    setTimeout(initProjectsCarousel, 200);
+    return;
+  }
+
+  console.log("✅ Biblioteca Splide carregada");
 
   try {
-    new Splide("#projectsCarousel", {
-      type: "slide",
+    const splide = new Splide("#projectsCarousel", {
+      type: "loop",
       perPage: 1,
+      perMove: 1,
       focus: "center",
-      gap: "1rem",
+      gap: "2rem",
+      padding: "5%",
       pagination: true,
       arrows: true,
       autoplay: false,
-      speed: 600,
+      speed: 800,
       easing: "cubic-bezier(0.4, 0, 0.2, 1)",
       breakpoints: {
         768: {
-          perPage: 1,
-          gap: "0.5rem",
-        },
+          padding: "2%",
+          gap: "1rem",
+        }
       },
-    }).mount();
+    });
+    
+    splide.mount();
+    console.log("✅ Carrossel de projetos montado com sucesso!");
+    
   } catch (error) {
-    console.error("Erro ao inicializar carrossel de projetos:", error);
+    console.error("❌ Erro ao inicializar carrossel de projetos:", error);
   }
 }
 
-// Função para abrir o modal do projeto
+// ===== MODAL DO PROJETO =====
 function openProjectModal(projectId) {
   const project = projectsData.find((p) => p.id === projectId);
   if (!project) return;
@@ -617,18 +450,15 @@ function openProjectModal(projectId) {
   const modal = document.getElementById("projectModal");
   if (!modal) return;
 
-  // Preencher dados do modal
+  // Preencher dados
   document.getElementById("modalProjectTitle").textContent = project.title;
-  document.getElementById("modalProjectSubtitle").textContent =
-    project.subtitle;
+  document.getElementById("modalProjectSubtitle").textContent = project.subtitle;
   document.getElementById("modalProjectMembers").textContent = project.members;
   document.getElementById("modalProjectImage").src = project.image;
   document.getElementById("modalProjectImage").alt = project.title;
-  document.getElementById("modalProjectDescription").textContent =
-    project.description;
+  document.getElementById("modalProjectDescription").textContent = project.description;
   document.getElementById("modalProjectProblem").textContent = project.problem;
-  document.getElementById("modalProjectSolution").textContent =
-    project.solution;
+  document.getElementById("modalProjectSolution").textContent = project.solution;
   document.getElementById("modalProjectResults").textContent = project.results;
 
   // Preencher tags
@@ -636,165 +466,76 @@ function openProjectModal(projectId) {
   tagsContainer.innerHTML = "";
   project.tags.forEach((tag) => {
     const tagElement = document.createElement("span");
-    tagElement.className = "tag";
     tagElement.textContent = tag;
     tagsContainer.appendChild(tagElement);
   });
 
   // Mostrar modal
-  setTimeout(() => {
-    modal.classList.add("active");
-    document.body.style.overflow = "hidden"; // Previne scroll no body
-  }, 10);
+  modal.style.display = "flex";
+  setTimeout(() => modal.classList.add("active"), 10);
+  document.body.style.overflow = "hidden";
 
-  // Event listeners para fechar modal
-  const closeBtn = modal.querySelector(".close-modal");
-  const backBtn = modal.querySelector(".modal-back-btn");
-
+  // Função para fechar
   const closeModal = () => {
     modal.classList.remove("active");
     setTimeout(() => {
-      document.body.style.overflow = ""; // Restaura scroll
-    }, 400);
+      modal.style.display = "none";
+      document.body.style.overflow = "";
+    }, 300);
   };
 
-  closeBtn.addEventListener("click", closeModal);
-  backBtn.addEventListener("click", closeModal);
+  // Event listeners
+  modal.querySelector(".close-modal").onclick = closeModal;
+  modal.querySelector(".modal-back-btn").onclick = closeModal;
+  modal.onclick = (e) => {
+    if (e.target === modal) closeModal();
+  };
 
-  // Fechar modal ao clicar fora do conteúdo
-  modal.addEventListener("click", (e) => {
-    if (e.target === modal) {
-      closeModal();
-    }
-  });
-
-  // Fechar modal com tecla ESC
-  const handleEscKey = (e) => {
+  // ESC para fechar
+  const handleEsc = (e) => {
     if (e.key === "Escape") {
       closeModal();
-      document.removeEventListener("keydown", handleEscKey);
+      document.removeEventListener("keydown", handleEsc);
     }
   };
-
-  document.addEventListener("keydown", handleEscKey);
+  document.addEventListener("keydown", handleEsc);
 }
 
-// Inicialização da aplicação
+// Tornar função global para uso inline no HTML
+window.openProjectModal = openProjectModal;
+
+// ===== INICIALIZAÇÃO PRINCIPAL =====
 function initializeApp() {
-  // Verifica acessibilidade
-  handleReducedMotion();
-
-  // Cria efeitos visuais
-  createParticles();
-  createSpecialParticles();
-  createCursorTrail();
-
-  // Animações
-  handleScrollAnimations();
+  console.log("🎬 Iniciando aplicação HappyEnd...");
+  
+  // Navegação
+  initNavigation();
   handleActiveNav();
-  handleParallax();
 
-  // Inicializa carrossel de homenagens
-  if (typeof Splide !== "undefined") {
-    initCarousel();
-  } else {
-    setTimeout(initCarousel, 500);
-  }
+  // Animação da cortina
+  handleCurtainAnimation();
 
-  // Inicializar grade de projetos e carrossel
-  createProjectsGrid();
+  // IMPORTANTE: Criar projetos ANTES de inicializar outros carrosséis
+  console.log("📂 Carregando projetos...");
   createProjectsCarousel();
 
-  // Event listener para redimensionamento
-  let resizeTimeout;
-  window.addEventListener("resize", () => {
-    clearTimeout(resizeTimeout);
-    resizeTimeout = setTimeout(handleResize, 250);
-  });
+  // Carrosséis secundários
+  setTimeout(() => {
+    console.log("👨‍🏫 Carregando professores e desenvolvedores...");
+    initTeachersCarousel();
+    initDevsCarousel();
+  }, 500);
+
+  console.log("%c✨ HappyEnd inicializado com sucesso! ✨", "color: #FFD700; font-size: 16px; font-weight: bold;");
 }
 
-// Previne comportamento estranho no carregamento
-document.addEventListener("DOMContentLoaded", function () {
+// ===== INICIALIZAÇÃO =====
+window.addEventListener("load", () => {
   window.scrollTo(0, 0);
-  initializeApp();
 });
 
-// Fallback se DOMContentLoaded já disparou
 if (document.readyState === "loading") {
   document.addEventListener("DOMContentLoaded", initializeApp);
 } else {
   initializeApp();
-}
-
-// Log de inicialização (pode remover em produção)
-console.log(
-  "%c✨ HappyEnd carregado com sucesso! ✨",
-  "color: #FFD700; font-size: 16px; font-weight: bold;"
-);
-console.log(
-  "%c🎭 Desenvolvido com amor para SESI SENAI Ferraz de Vasconcelos",
-  "color: #FFA500; font-size: 12px;"
-);
-
-
-// Inicializa o carrossel de desenvolvedores - 6 CARDS
-function initDevsCarousel() {
-  const devsCarouselElement = document.getElementById("devsCarousel");
-  if (!devsCarouselElement) {
-    console.warn("Carrossel de desenvolvedores não encontrado");
-    return;
-  }
-
-  // Verifica se Splide está disponível
-  if (typeof Splide === 'undefined') {
-    console.error("Biblioteca Splide não carregada");
-    setTimeout(initDevsCarousel, 200);
-    return;
-  }
-
-  try {
-    const devsCarousel = new Splide("#devsCarousel", {
-      type: "slide", // Mais leve que 'loop'
-      perPage: 3, // Mostra 3 cards por vez
-      perMove: 1, // Move 1 card por vez
-      gap: "1.5rem",
-      pagination: true,
-      arrows: true,
-      autoplay: false, // Desativado para performance
-      speed: 500,
-      easing: "ease",
-      // Configurações para 6 cards no total
-      rewind: true, // Volta ao início quando chega no final
-      breakpoints: {
-        1200: {
-          perPage: 2, // 2 cards em telas médias
-          gap: "1rem",
-        },
-        768: {
-          perPage: 1, // 1 card em mobile
-          gap: "0.5rem",
-        },
-      },
-    });
-
-    devsCarousel.mount();
-    console.log("Carrossel de desenvolvedores (6 cards) inicializado");
-
-  } catch (error) {
-    console.error("Erro ao inicializar carrossel de devs:", error);
-  }
-}
-
-// Inicialização simplificada
-function initAllCarousels() {
-  setTimeout(() => {
-    initDevsCarousel();
-  }, 100);
-}
-
-// Inicialização
-if (document.readyState === 'loading') {
-  document.addEventListener('DOMContentLoaded', initAllCarousels);
-} else {
-  initAllCarousels();
 }
