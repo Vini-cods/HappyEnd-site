@@ -46,7 +46,7 @@ const projectsData = [
     id: 4,
     title: "English Adventure",
     subtitle: "Desbloqueie um novo idioma, conecte o jogo à aprendizagem",
-    members: "Julya Teixeira, Sofia Santos, Sofia Ornellas, Thaynara Silva, Victor Cavalcante",
+    members: "Julya Teixeira, Soffia Santos, Sofia Ornellas, Thaynara Silva, Victor Cavalcante",
     image: "src/img/banners/english.png",
     description: "Sistema gamificado para ensino infantil de inglês com tabuleiro IoT integrado, site com desafios e aplicativo de acompanhamento.",
     problem: "Dificuldade no ensino de inglês para crianças através de métodos tradicionais pouco engajadores e interativos.",
