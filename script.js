@@ -1,5 +1,5 @@
 // ===== CONFIGURAÇÕES E ESTADO =====
-let curtainOpened = false;
+// Removido: let curtainOpened = false;
 
 // ===== DADOS DOS PROJETOS =====
 const projectsData = [
@@ -161,52 +161,8 @@ const projectsData = [
   }
 ];
 
-// ===== ANIMAÇÃO DA CORTINA =====
-function handleCurtainAnimation() {
-  const curtainContainer = document.getElementById("curtainContainer");
-  const curtainLeft = document.getElementById("curtainLeft");
-  const curtainRight = document.getElementById("curtainRight");
-  const curtainTop = document.getElementById("curtainTop");
-  const curtainText = document.getElementById("curtainText");
-  const scrollIndicator = document.getElementById("scrollIndicator");
-
-  if (!curtainContainer || !curtainLeft || !curtainRight) return;
-
-  window.addEventListener("scroll", function () {
-    const scrolled = window.pageYOffset;
-    const maxScroll = 500;
-    const progress = Math.min(scrolled / maxScroll, 1);
-
-    if (progress > 0 && !curtainOpened) {
-      const translateX = progress * 100;
-
-      curtainLeft.style.transform = `translateX(-${translateX}%)`;
-      curtainRight.style.transform = `translateX(${translateX}%)`;
-
-      if (curtainTop) {
-        curtainTop.style.transform = `translateY(-${translateX}%)`;
-      }
-
-      if (curtainText) {
-        curtainText.style.opacity = `${1 - progress}`;
-        curtainText.style.transform = `translate(-50%, -50%) scale(${1 - progress * 0.3})`;
-      }
-
-      if (scrollIndicator) {
-        scrollIndicator.style.opacity = `${Math.max(0, 1 - progress * 2)}`;
-      }
-
-      if (progress >= 0.98) {
-        curtainOpened = true;
-        setTimeout(() => {
-          curtainContainer.style.display = "none";
-          if (scrollIndicator) scrollIndicator.style.display = "none";
-          window.scrollTo({ top: 0, behavior: "smooth" });
-        }, 500);
-      }
-    }
-  });
-}
+// ===== ANIMAÇÃO DA CORTINA (REMOVIDA) =====
+// Função removida completamente
 
 // ===== NAVEGAÇÃO =====
 function initNavigation() {
@@ -511,8 +467,7 @@ function initializeApp() {
   initNavigation();
   handleActiveNav();
 
-  // Animação da cortina
-  handleCurtainAnimation();
+  // REMOVIDO: handleCurtainAnimation();
 
   // IMPORTANTE: Criar projetos ANTES de inicializar outros carrosséis
   console.log("📂 Carregando projetos...");
